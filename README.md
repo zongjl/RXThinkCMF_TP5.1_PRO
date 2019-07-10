@@ -6,18 +6,18 @@
 	    <img src="https://img.shields.io/hexpm/l/plug.svg" />
 	</a>
 	<a href="http://www.rxthink.cn/">
-	    <img src="https://img.shields.io/badge/RXThinkCMF_TP5.1-v2.0.0-brightgreen.svg" />
+	    <img src="https://img.shields.io/badge/RXThinkCMF_TP5.1_PRO-v2.0.0-brightgreen.svg" />
 	</a>
 	<a href="https://www.layui.com/">
         <img src="https://img.shields.io/badge/layui-2.4.5-blue.svg" alt="layui">
     </a>
-	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1/stargazers">
-	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1/badge/star.svg?theme=dark" />
+	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/stargazers">
+	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/star.svg?theme=dark" />
 	</a>
-	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1/members">
-	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1/badge/fork.svg?theme=dark" />
+	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/members">
+	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/fork.svg?theme=dark" />
 	</a>
-	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_V2.0_PRO/repository/archive/master.zip">
+	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO_V2.0_PRO/repository/archive/master.zip">
 	    <img src="https://img.shields.io/badge/download-1820m-red.svg" />
 	</a>
 </p>
@@ -33,11 +33,11 @@
 ### 本项目还在不断开发完善中,如有建议或问题请官方论坛反馈，论坛地址:http://www.rxthink.cn
 
 ## 项目介绍
-RXThinkCMF_TP5.1 基于 ThinkPHP5.1_PRO +Layui2.4.5 开发权限(RBAC)及内容管理框架，框架中集成了权限管理、模块管理、插件管理、钩子管理、数据库管理、富文本编辑器(已集成ueditor,kindeditor)，后台支持多主题切换、布局管理、广告管理、配置管理、字典管理、切图管理、CMS内容管理等常用功能模块，以方便开发者快速构建自己的应用。RXThinkCMF_TP5.1框架专注于为中小企业提供最佳的行业基础后台框架解决方案，执行效率、扩展性、稳定性值得信赖，操作体验流畅，使用非常优化，欢迎大家使用及进行二次开发。
+RXThinkCMF_TP5.1_PRO 基于 ThinkPHP5.1 +Layui2.4.5 开发权限(RBAC)及内容管理框架，框架中集成了权限管理、模块管理、插件管理、钩子管理、数据库管理、富文本编辑器(已集成ueditor,kindeditor)，后台支持多主题切换、布局管理、广告管理、配置管理、字典管理、切图管理、CMS内容管理等常用功能模块，以方便开发者快速构建自己的应用。RXThinkCMF_TP5.1_PRO框架专注于为中小企业提供最佳的行业基础后台框架解决方案，执行效率、扩展性、稳定性值得信赖，操作体验流畅，使用非常优化，欢迎大家使用及进行二次开发。
 
 * 模块化：全新的架构和模块化的开发机制，便于灵活扩展和二次开发。
 * 模型/栏目/分类信息体系：通过栏目和模型绑定，以及不同的模型类型，不同栏目可以实现差异化的功能，轻松实现诸如资讯、下载、讨论和图片等功能。通过分类信息和栏目绑定，可以自动建立索引表，轻松实现复杂的信息检索。
-* RXThinkCMF_TP5.1是一套基于ThinkPHP + Layui开发出来的框架。
+* RXThinkCMF_TP5.1_PRO是一套基于ThinkPHP + Layui开发出来的框架。
 * 支持SQLServer、MySQL、Oracle、PostgreSQL、SQLite等多数据库类型。模块化设计，层次结构清晰。  
 * AUTH权限认证，操作权限控制精密细致，对所有管理链接都进行权限验证，可控制到导航菜单、功能按钮。提高开发效率及质量。
 * 常用类封装，日志、缓存、验证、字典、文件（本地、七牛云）。等等，目前兼容浏览器（Chrome、Firefox、360浏览器等）
@@ -65,7 +65,7 @@ RXThinkCMF_TP5.1 基于 ThinkPHP5.1_PRO +Layui2.4.5 开发权限(RBAC)及内容�
 
 
 ## 开发者信息
-* 系统名称：RXThinkCMF_TP5.1权限(RBAC)及内容管理框架  
+* 系统名称：RXThinkCMF_TP5.1_PRO权限(RBAC)及内容管理框架  
 * 作者[牧羊人]：南京RXThink研发工作室
 * 作者QQ：1175401194  
 * 官网网址：[http://www.rxthink.cn/](http://www.rxthink.cn/)  
@@ -80,13 +80,13 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 | 版本名称 | 说明 | 地址 |
 | :---: | :---: | :---: |
 | RXThinkCMF旗舰版 v2.0 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO |
-| RXThinkCMF专业版 v2.0 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1 |
+| RXThinkCMF专业版 v2.0 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO |
 
 
 ## 后台演示（用户名:admin 密码:admin123）
-- RXThinkCMF_TP5.1_TP5.1_V2.0.0版本：[http://manage.tp5.1.rxthink.cn/](http://manage.tp5.1.rxthink.cn/)
-- RXThinkCMF_TP5.1_TP5.0_V2.0.0版本：[http://manage.tp5.0.rxthink.cn/](http://manage.tp5.0.rxthink.cn/)
-- RXThinkCMF_TP5.1_TP3.2_V2.0.0版本：[http://manage.tp3.2.rxthink.cn/](http://manage.tp3.2.rxthink.cn/)
+- RXThinkCMF_TP5.1版本：[http://manage.tp5.1.rxthink.cn/](http://manage.tp5.1.rxthink.cn/)
+- RXThinkCMF_TP5.0版本：[http://manage.tp5.0.rxthink.cn/](http://manage.tp5.0.rxthink.cn/)
+- RXThinkCMF_TP3.2版本：[http://manage.tp3.2.rxthink.cn/](http://manage.tp3.2.rxthink.cn/)
 
 
 ## 技术支持
@@ -103,26 +103,35 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 ![QQ群二维码](http://images.tp3.2.rxthink.cn/demo/qq.png "gh_03bc4364b4dc_344.jpg")
 
+## 效果图展示
+
+#### 1、系统登录
+ ![系统登录](http://images.tp5.1.rxthink.cn/1.png)
+ 
+#### 2、系统主页
+ ![系统主页](http://images.tp5.1.rxthink.cn/2.png)
+ 
+#### 3、func.js方法类库
+ ![JS核心类库](http://images.tp5.1.rxthink.cn/3.png)
+ 
+#### 4、common.js函数类库
+ ![JS核心类库](http://images.tp5.1.rxthink.cn/4.png)
+ 
+#### 5、列表JS案例
+ ![列表JS案例](http://images.tp5.1.rxthink.cn/5.png)
+ 
+#### 6、缓存基类封装
+ ![底层缓存基类封装](http://images.tp5.1.rxthink.cn/6.png)
+ 
+#### 7、模型基类封装
+ ![模型基类封装](http://images.tp5.1.rxthink.cn/7.png)
+ 
+#### 8、系统公共函数封装
+ ![系系统公共函数封装](http://images.tp5.1.rxthink.cn/9.png)
 
 ## 部署说明
 
-## 第一步：点击同意安装协议
-
- ![](http://images.tp3.2.rxthink.cn/demo/阅读协议.png)
-
-## 第二步：环境检测
-
-大家检测下自己的环境，如果环境提供有误，请修复对应的错误
-
- ![](http://images.tp3.2.rxthink.cn/demo/环境检测.png)
-
-## 第三步：创建数据库
-
-大家根据自己的数据库来配置，建议独立数据库。输入创始人的账号信息，记得要保存好自己的用户名密码信息哟。
-
-![](http://images.tp3.2.rxthink.cn/demo/数据配置.png)  
-
-![](http://images.tp3.2.rxthink.cn/demo/数据库安装.png)  
+[点击查看技术文档](http://docs.tp5.1.rxthink.cn)
 
 
 ## 更新说明
@@ -221,7 +230,7 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 # 2018-03-08更新
 1、【准备】整体框架结构的规划、设计、排期与实施  
-2、【优化】鉴于RXThinkCMF_TP5.1_TP3.2_V2.0框架的设计和实践，对框架整体性做重构与改进  
+2、【优化】鉴于RXThinkCMF_TP3.2_V2.0框架的设计和实践，对框架整体性做重构与改进  
  
 
 ## 项目截图
@@ -242,7 +251,7 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 ## 版权信息
 
-RXThinkCMF_TP5.1提供个人非商业用途免费使用，商业需授权。
+RXThinkCMF_TP5.1_PRO提供个人非商业用途免费使用，商业需授权。
 
 本项目包含的第三方源码和二进制文件之版权信息另行标注。
 
