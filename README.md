@@ -17,9 +17,6 @@
 	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/members">
 	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/fork.svg?theme=dark" />
 	</a>
-	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO_V2.0_PRO/repository/archive/master.zip">
-	    <img src="https://img.shields.io/badge/download-1820m-red.svg" />
-	</a>
 </p>
 
 <p align="center">
@@ -69,7 +66,7 @@ RXThinkCMF_TP5.1_PRO 基于 ThinkPHP5.1 +Layui2.4.5 开发权限(RBAC)及内容�
 * 作者[牧羊人]：南京RXThink研发工作室
 * 作者QQ：1175401194  
 * 官网网址：[http://www.rxthink.cn/](http://www.rxthink.cn/)  
-* 文档网址：[http://docs.v5.1.rxthink.cn/](http://docs.v5.1.rxthink.cn/)  
+* 文档网址：[http://docs.pro5.1.rxthink.cn/](http://docs.pro5.1.rxthink.cn/)  
 * 开源协议：Apache 2.0
 
 ### jwt token鉴权机制
@@ -84,9 +81,7 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 
 ## 后台演示（用户名:admin 密码:admin123）
-- RXThinkCMF_TP5.1版本：[http://manage.tp5.1.rxthink.cn/](http://manage.tp5.1.rxthink.cn/)
-- RXThinkCMF_TP5.0版本：[http://manage.tp5.0.rxthink.cn/](http://manage.tp5.0.rxthink.cn/)
-- RXThinkCMF_TP3.2版本：[http://manage.tp3.2.rxthink.cn/](http://manage.tp3.2.rxthink.cn/)
+- RXThinkCMF_TP5.1版本：[http://manage.pro5.1.rxthink.cn/](http://manage.tp5.1.rxthink.cn/)
 
 
 ## 技术支持
@@ -131,7 +126,7 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 ## 部署说明
 
-[点击查看技术文档](http://docs.tp5.1.rxthink.cn)
+[点击查看技术文档](http://docs.pro5.1.rxthink.cn/)
 
 
 ## 更新说明
