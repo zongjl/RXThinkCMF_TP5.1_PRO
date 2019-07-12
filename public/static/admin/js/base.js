@@ -1,1 +1,311 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var a=t[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,n),a.l=!0,a.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)n.d(r,a,function(t){return e[t]}.bind(null,a));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=12)}({12:function(e,t,n){n(13)},13:function(e,t){layui.extend({larryms:"/lib/larryms",larryMenu:"/lib/larryMenu"}).define(["jquery","larryms","larryMenu","layer"],function(e){"use strict";var t=layui.$,n=layui.larryms,r=layui.larryMenu(),a=(layui.device(),function(){this.config={icon:"larry",url:"//at.alicdn.com/t/font_907665_gzx4w7ngs1k.css",online:!0},this.screen=function(){var e=t(window).width();return e>=1200?4:e>=992?3:e>=768?2:1}}),l=function(){t(".larry-panel .tools").off("click").on("click",function(){t(this).hasClass("larry-unfold1")?(t(this).addClass("larry-fold9").removeClass("larry-unfold1"),t(this).parent(".larry-panel-header").siblings(".larry-panel-body").slideToggle()):(t(this).addClass("larry-unfold1").removeClass("larry-fold9"),t(this).parent(".larry-panel-header").siblings(".larry-panel-body").slideToggle())}),t(".larry-panel .close").off("click").on("click",function(){t(this).parents(".larry-panel").parent().fadeOut()})},o=function(e){r.ContentMenu(e,{name:"body"},t("body")),top==self?t("#larry_tab_content").mouseenter(function(){r.remove()}):t("#larry_tab_content",parent.document).mouseout(function(){r.remove()})};a.prototype.init=function(){var e=this.config;if(n.fontset({icon:e.icon,url:e.url,online:e.online}),layui.config({base:layui.cache.base+"/lib/"}),layui.cache.page&&(layui.cache.page=layui.cache.page.split(","),-1===t.inArray("larry",layui.cache.page))){var a={};layui.cache.mods=void 0===layui.cache.mods?"module":layui.cache.mods,layui.cache.path=void 0===layui.cache.path?layui.cache.mods+"/":layui.cache.path;for(var l=0;l<layui.cache.page.length;l++)a[layui.cache.page[l]]=layui.cache.path+layui.cache.page[l];layui.extend(a),layui.use(layui.cache.page)}!1!==layui.cache.rightMenu&&"custom"!==layui.cache.rightMenu?o([[{text:"刷新当前页",func:function(){top==self?document.location.reload():t(".layui-tab-content .layui-tab-item",parent.document).each(function(){t(this).hasClass("layui-show")&&t(this).children("iframe").attr("src",t(this).children("iframe").attr("src"))})}},{text:"重载主框架",func:function(){top.document.location.reload()}},{text:"设置系统主题",func:function(){null!==top.document.getElementById("larryTheme")?top.document.getElementById("larryTheme").click():n.error("当前页面不支持主题设置或请登陆系统后设置系统主题",n.tit[0])}},{text:"选项卡常用操作",data:[[{text:"定位当前选项卡",func:function(){null!==top.document.getElementById("tabCtrD")?top.document.getElementById("tabCtrD").click():n.error("请先登陆系统，此处无选项卡操作",n.tit[0])}},{text:"关闭当前选项卡",func:function(){null!==top.document.getElementById("tabCtrA")?top.document.getElementById("tabCtrA").click():n.error("请先登陆系统，此处无选项卡操作",n.tit[0])}},{text:"关闭其他选项卡",func:function(){null!==top.document.getElementById("tabCtrB")?top.document.getElementById("tabCtrB").click():n.error("请先登陆系统，此处无选项卡操作",n.tit[0])}},{text:"关闭全部选项卡",func:function(){null!==top.document.getElementById("tabCtrC")?top.document.getElementById("tabCtrC").click():n.error("请先登陆系统，此处无选项卡操作",n.tit[0])}}]]},{text:"清除缓存",func:function(){top.document.getElementById("clearCached").click()}}]]):!1===layui.cache.rightMenu&&(r.remove(),r=null)},a.prototype.panel=function(){l()},a.prototype.render=a.prototype.init;var c=new a;c.render(),e("larry",c)})}});
+/**
+ * JS公共函数类
+ * @author 牧羊人
+ * @date 2019/6/11
+ */
+layui.define(['jquery'], function (exports) {
+    "use strict";
+
+    // 声明变量
+    var $ = layui.$;
+
+    var base = {
+        /**
+         * 判断字符串是否为空
+         */
+        isEmpty: function (str) {
+            if (str == null || typeof str == "undefined" || str == "") {
+                return true;
+            }
+            return false;
+        },
+        /**
+         * 邮箱格式验证
+         */
+        isEmail: function (str) {
+            var reg = /^[a-z0-9]([a-z0-9\\.]*[-_]{0,4}?[a-z0-9-_\\.]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+([\.][\w_-]+){1,5}$/i;
+            if (reg.test(str)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        /**
+         * 手机号格式验证
+         */
+        isMobile: function (tel) {
+            var reg = /(^1[3|4|5|7|8][0-9]{9}$)/;
+            if (reg.test(tel)) {
+                return true;
+            } else {
+                return false;
+            }
+            ;
+        },
+        upCase: function (str) {
+            if (comm.isEmpty(str)) {
+                return;
+            }
+            return str.substring(0, 1).toUpperCase() + str.substring(1);
+        },
+        /**
+         * 金额数字转大写
+         */
+        upDigit: function (num) {
+            var fraction = ['角', '分', '厘'];
+            var digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+            var unit = [
+                ['元', '万', '亿'],
+                ['', '拾', '佰', '仟']
+            ];
+            var head = num < 0 ? '欠人民币' : '人民币';
+            num = Math.abs(num);
+            var s = '';
+            for (var i = 0; i < fraction.length; i++) {
+                s += (digit[Math.floor(num * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+            }
+            s = s || '整';
+            num = Math.floor(num);
+            for (var i = 0; i < unit[0].length && num > 0; i++) {
+                var p = '';
+                for (var j = 0; j < unit[1].length && num > 0; j++) {
+                    p = digit[num % 10] + unit[1][j] + p;
+                    num = Math.floor(num / 10);
+                }
+                s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+                //s = p + unit[0][i] + s;
+            }
+            return head + s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
+        },
+        /**
+         * 设置cookie
+         */
+        setCookie: function (name, value, iDay) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + iDay);
+            document.cookie = name + '=' + value + ';expires=' + oDate;
+        },
+        /**
+         * 获取cookie
+         */
+        getCookie: function (name) {
+            var arr = document.cookie.split('; ');
+            for (var i = 0; i < arr.length; i++) {
+                var arr2 = arr[i].split('=');
+                if (arr2[0] == name) {
+                    return arr2[1];
+                }
+            }
+            return '';
+        }
+        /**
+         * 删除Cookie
+         */
+        , removeCookie: function (name) {
+            this.setCookie(name, 1, -1);
+        },
+        /**
+         * 显示
+         */
+        show: function (obj) {
+            var blockArr = ['div', 'li', 'ul', 'ol', 'dl', 'table', 'article', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'hr', 'header', 'footer', 'details', 'summary', 'section', 'aside', '']
+            if (blockArr.indexOf(obj.tagName.toLocaleLowerCase()) === -1) {
+                obj.style.display = 'inline';
+            } else {
+                obj.style.display = 'block';
+            }
+        },
+        /**
+         * 隐藏
+         */
+        hide: function (obj) {
+            obj.style.display = "none";
+        },
+        /**
+         * Ajax网络请求
+         */
+        ajax: function (obj) {
+            obj = obj || {};
+            obj.type = obj.type.toUpperCase() || 'POST';
+            obj.url = obj.url || '';
+            obj.async = obj.async || true;
+            obj.data = obj.data || null;
+            obj.success = obj.success || function () {
+            };
+            obj.error = obj.error || function () {
+            };
+            var xmlHttp = null;
+            if (XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var params = [];
+            for (var key in obj.data) {
+                params.push(key + '=' + obj.data[key]);
+            }
+            var postData = params.join('&');
+            if (obj.type.toUpperCase() === 'POST') {
+                xmlHttp.open(obj.type, obj.url, obj.async);
+                xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+                xmlHttp.send(postData);
+            } else if (obj.type.toUpperCase() === 'GET') {
+                xmlHttp.open(obj.type, obj.url + '?' + postData, obj.async);
+                xmlHttp.send(null);
+            }
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    obj.success(xmlHttp.responseText);
+                } else {
+                    obj.error(xmlHttp.responseText);
+                }
+            };
+        },
+        /**
+         * 数据类型判断
+         * 案例：istype([],'array')
+         */
+        istype: function (o, type) {
+            if (type) {
+                var _type = type.toLowerCase();
+            }
+            switch (_type) {
+                case 'string':
+                    return Object.prototype.toString.call(o) === '[object String]';
+                case 'number':
+                    return Object.prototype.toString.call(o) === '[object Number]';
+                case 'boolean':
+                    return Object.prototype.toString.call(o) === '[object Boolean]';
+                case 'undefined':
+                    return Object.prototype.toString.call(o) === '[object Undefined]';
+                case 'null':
+                    return Object.prototype.toString.call(o) === '[object Null]';
+                case 'function':
+                    return Object.prototype.toString.call(o) === '[object Function]';
+                case 'array':
+                    return Object.prototype.toString.call(o) === '[object Array]';
+                case 'object':
+                    return Object.prototype.toString.call(o) === '[object Object]';
+                case 'nan':
+                    return isNaN(o);
+                case 'elements':
+                    return Object.prototype.toString.call(o).indexOf('HTML') !== -1
+                default:
+                    return Object.prototype.toString.call(o)
+            }
+        },
+        /**
+         * 关键字加标签（多个关键词用空格隔开）
+         * 案例：findKey('守侯我oaks接到了来自下次你离开快乐吉祥留在开城侯','守侯 开','i')
+         */
+        findKey: function (str, key, el) {
+            var arr = null,
+                regStr = null,
+                content = null,
+                Reg = null,
+                _el = el || 'span';
+            arr = key.split(/\s+/);
+            //alert(regStr); //    如：(前端|过来)
+            regStr = this.createKeyExp(arr);
+            content = str;
+            //alert(Reg);//        /如：(前端|过来)/g
+            Reg = new RegExp(regStr, "g");
+            //过滤html标签 替换标签，往关键字前后加上标签
+            content = content.replace(/<\/?[^>]*>/g, '')
+            return content.replace(Reg, "<" + _el + ">$1</" + _el + ">");
+        },
+        /**
+         * 获取URL参数
+         * 调用：get_url_param('http://xxxx?draftId=122000011938')
+         */
+        get_url_param: function (url) {
+            url = url ? url : window.location.href;
+            var _pa = url.substring(url.indexOf('?') + 1),
+                _arrS = _pa.split('&'),
+                _rs = {};
+            for (var i = 0, _len = _arrS.length; i < _len; i++) {
+                var pos = _arrS[i].indexOf('=');
+                if (pos == -1) {
+                    continue;
+                }
+                var name = _arrS[i].substring(0, pos),
+                    value = window.decodeURIComponent(_arrS[i].substring(pos + 1));
+                _rs[name] = value;
+            }
+            return _rs;
+        },
+        /**
+         * 设置URL参数
+         * 调用：set_url_param({'a':1,'b':2})
+         */
+        set_url_param: function (obj) {
+            var _rs = [];
+            for (var p in obj) {
+                if (obj[p] != null && obj[p] != '') {
+                    _rs.push(p + '=' + obj[p])
+                }
+            }
+            return _rs.join('&');
+        },
+        /**
+         * 随机产生颜色
+         */
+        random_color: function () {
+            //randomNumber是下面定义的函数
+            //写法1
+            //return 'rgb(' + this.randomNumber(255) + ',' + this.randomNumber(255) + ',' + this.randomNumber(255) + ')';
+
+            //写法2
+            return '#' + Math.random().toString(16).substring(2).substr(0, 6);
+
+            //写法3
+            //var color='#',_index=this.randomNumber(15);
+            //for(var i=0;i<6;i++){
+            //color+='0123456789abcdef'[_index];
+            //}
+            //return color;
+        },
+        /**
+         * 随机返回一定范围的数字
+         */
+        random_number: function (n1, n2) {
+            //randomNumber(5,10)
+            //返回5-10的随机整数，包括5，10
+            if (arguments.length === 2) {
+                return Math.round(n1 + Math.random() * (n2 - n1));
+            }
+            //randomNumber(10)
+            //返回0-10的随机整数，包括0，10
+            else if (arguments.length === 1) {
+                return Math.round(Math.random() * n1)
+            }
+            //randomNumber()
+            //返回0-255的随机整数，包括0，255
+            else {
+                return Math.round(Math.random() * 255)
+            }
+        },
+        /**
+         * 数字排序
+         * 调用：array_sort(arr,'a,b')a是第一排序条件，b是第二排序条件
+         */
+        array_sort: function (arr, sort) {
+            if (!sort) {
+                return arr
+            }
+            var _sort = sort.split(',').reverse(),
+                _arr = arr.slice(0);
+            for (var i = 0, len = _sort.length; i < len; i++) {
+                _arr.sort(function (n1, n2) {
+                    return n1[_sort[i]] - n2[_sort[i]]
+                })
+            }
+            return _arr;
+        }
+    };
+
+    /**
+     * 输出模块(此模块接口是对象)
+     */
+    exports('base', base);
+});

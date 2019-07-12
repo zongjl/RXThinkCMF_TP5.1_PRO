@@ -20,21 +20,20 @@
 	{/if}
 	<div class="layui-tab-content">
 		<!-- 功能操作区一 -->
-		<form class="layui-form">
-			<div class="layui-form">
-				<div class="layui-form-item">
-					<div class="layui-inline">
-						<div class="layui-input-inline">
-							<input type="text" name="name" placeholder="请输入配置项名称" autocomplete="off" class="layui-input">
-						</div>
+		<form class="layui-form toolbar">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label w-auto">配置项名称：</label>
+					<div class="layui-input-inline">
+						<input type="text" name="name" placeholder="请输入配置项名称" autocomplete="off" class="layui-input">
 					</div>
-					<input name="group_id" id="group_id" type="hidden" value="{$group_id}">
-					<div class="layui-inline">
-						<div class="layui-input-inline" style="width: auto;">
-							{:widget('func/btnQuery',array('查询'))}
-							{:widget('func/btnAdd',array('添加配置',['group_id='.$group_id]))}
-							{:widget('func/btnDAll',array('批量删除'))}
-						</div>
+				</div>
+				<input name="group_id" id="group_id" type="hidden" value="{$group_id}">
+				<div class="layui-inline">
+					<div class="layui-input-inline" style="width: auto;">
+						{:widget('func/btnQuery',array('查询'))}
+						{:widget('func/btnAdd',array('添加配置',['group_id='.$group_id]))}
+						{:widget('func/btnDAll',array('批量删除'))}
 					</div>
 				</div>
 			</div>

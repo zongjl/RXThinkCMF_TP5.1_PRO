@@ -1,4 +1,4 @@
-<form class="layui-form info-form" action="" style="width:730px;">
+<form class="layui-form model-form" action="" style="width:730px;">
 	<input name="id" id="id" type="hidden" value="{$info.id|default=0}">
 	<div class="layui-form-item">
 		<label class="layui-form-label">广告位：</label>
@@ -16,7 +16,7 @@
 		<div class="layui-inline">
 			<label class="layui-form-label">使用平台：</label>
 			<div class="layui-input-inline">
-				{:widget('common/simpleSelect',array('platform|1|所属平台|name|id',config('config.platform_type'),isset($info['platform']) ? $info['platform'] : 0))}
+				{:widget('common/singleSelect',array('platform|1|所属平台|name|id',config('config.platform_type'),isset($info['platform']) ? $info['platform'] : 0))}
 			</div>
 		</div>
 	</div>

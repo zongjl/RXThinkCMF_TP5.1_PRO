@@ -1,7 +1,16 @@
+<style>
+	.layui-layout-admin .layui-footer {
+		left: 0px;
+		padding: 10px 0;
+		text-align: center;
+		box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, .05);
+		background-color: white;
+	}
+</style>
 {if $button_type eq 1}
 <div class="layui-form-item layui-layout-admin">
 	<div class="layui-input-block">
-		<div class="layui-footer" style="left:0;">
+		<div class="layui-footer">
 			{if isset($button_submit)}
 			<button class="layui-btn" lay-submit="" lay-filter="submitForm">{$button_submit_title}</button>
 			{/if}

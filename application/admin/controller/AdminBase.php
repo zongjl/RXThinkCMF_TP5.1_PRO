@@ -46,6 +46,7 @@ class AdminBase extends BaseController
     public function initialize()
     {
         parent::initialize();
+//        session('admin_id', null);
 
         // 初始化配置
         $this->initConfig();

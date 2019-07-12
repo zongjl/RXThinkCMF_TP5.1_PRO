@@ -6,9 +6,10 @@
 {block name='content'}
 
 	<!-- 功能操作区一 -->
-	<div class="layui-form">
+	<form class="layui-form toolbar">
        <div class="layui-form-item">
 			<div class="layui-inline">
+				<label class="layui-form-label w-auto">栏目名称：</label>
 				<div class="layui-input-inline">
 				   <input type="text" name="name" placeholder="请输入栏目名称" autocomplete="off" class="layui-input">
 				</div>
@@ -23,7 +24,7 @@
                </div>
            </div>
        </div>
-	</div>
+	</form>
 
 	<!-- TREE渲染区 -->
 	<table id="tableList" class="layui-hide" lay-filter="tableList"></table>

@@ -12,6 +12,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\Admin as AdminModel;
+use app\admin\service\MenuService;
 
 /**
  * 后台主页-控制器
@@ -43,6 +44,11 @@ class Index extends AdminBase
     {
         // 取消模板布局
         $this->view->engine->layout(false);
+
+        // 获取菜单
+        $menuService = new MenuService();
+        $result = $menuService->getNavbarMenu($this->system_auth);
+        $this->assign('menuList', $result['data']);
         return $this->fetch();
     }
 
@@ -54,8 +60,6 @@ class Index extends AdminBase
      */
     public function main()
     {
-        // 取消模板布局
-        $this->view->engine->layout(false);
         return $this->fetch();
     }
 }

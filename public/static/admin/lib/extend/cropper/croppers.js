@@ -4,7 +4,7 @@
  * @date 2018/9/13
  */
 layui.extend({
-    cropper: '/lib/extend/cropper/cropper',
+    cropper: '/extend/cropper/cropper',
 }).define(['jquery', 'layer', 'cropper'], function (exports) {
     var $ = layui.$
         , layer = layui.layer;

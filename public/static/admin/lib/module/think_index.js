@@ -1,1 +1,290 @@
-!function(t){var o={};function e(r){if(o[r])return o[r].exports;var l=o[r]={i:r,l:!1,exports:{}};return t[r].call(l.exports,l,l.exports,e),l.l=!0,l.exports}e.m=t,e.c=o,e.d=function(t,o,r){e.o(t,o)||Object.defineProperty(t,o,{enumerable:!0,get:r})},e.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},e.t=function(t,o){if(1&o&&(t=e(t)),8&o)return t;if(4&o&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(e.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&o&&"string"!=typeof t)for(var l in t)e.d(r,l,function(o){return t[o]}.bind(null,l));return r},e.n=function(t){var o=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(o,"a",o),o},e.o=function(t,o){return Object.prototype.hasOwnProperty.call(t,o)},e.p="",e(e.s=4)}({4:function(t,o,e){e(5)},5:function(o,e){layui.define(["jquery","form","larryTab","laytpl","larry"],function(o){var e=layui.$,r=(layui.form,layui.larryTab({tab_elem:"#larry_tab",tabMax:30})),l=layui.layer,a=layui.laytpl,n=(layui.larry,layui.larryms),i=(e(window),e("body"));function s(){f({Display:"block",UserPhoto:e("#user_photo").attr("src"),UserName:e("#uname").text()}),layui.data("larryms",{key:"lockscreen",value:"locked"}),function o(){var r=new Date;var l=r.getHours();var a=r.getMinutes();var n=r.getSeconds();a=a<10?"0"+a:a;n=n<10?"0"+n:n;e("#time").html(l+":"+a+":"+n);t=setTimeout(function(){o()},500)}()}function f(t){var o="larry_lock_screen",r=document.createElement("div"),n=a(['<div class="lock-screen" style="display: {{d.Display}};">','<div class="lock-wrapper" id="lock-screen">','<div id="time"></div>','<div class="lock-box">','<img src="{{d.UserPhoto}}" alt="">',"<h1>{{d.UserName}}</h1>",'<form action="" class="layui-form lock-form">','<div class="layui-form-item">','<input type="password" id="unlock_pass" name="lock_password" lay-verify="pass" placeholder="锁屏状态，请输入密码解锁" autocomplete="off" class="layui-input"  autofocus="">',"</div>",'<div class="layui-form-item">','<span class="layui-btn larry-btn" id="unlock">立即解锁</span>',"</div>","</form>","</div>","</div>","</div>"].join("")).render(t),s=document.getElementById(o);r.id=o,r.innerHTML=n,s&&i[0].removeChild(s),"none"!==t.Display?i[0].appendChild(r):e("#larry_lock_screen").empty(),e("#unlock").off("click").on("click",function(){var t,o;t=e("#user_photo").attr("src"),o=e("#uname").text(),"p@ssw0rd"===e("#unlock_pass").val()?f({Display:"none",UserPhoto:t,UserName:o}):l.tips("请输入正确的密码解锁",e("#unlock"),{tips:[2,"#FF5722"],time:1e3}),layui.data("larryms",{key:"lockscreen",value:"unlock"})}),e("#unlock_pass").keypress(function(t){if(window.event&&13==window.event.keyCode)return e("#unlock").click(),!1})}"locked"===layui.data("larryms").lockscreen&&s(),r.menuSet({type:"POST",url:layui.cache.menusUrl,left_menu:"#larryms_left_menu",leftFilter:"LarrySide"}),r.menu(),r.config.tabSession&&r.session(function(t){t.getItem("tabMenu")&&e("#larry_tab_title li.layui-this").trigger("click")}),e("#larryms_version").text(n.version),e("#menufold").on("click",function(){e("#larry_layout").hasClass("larryms-fold")?(e("#larry_layout").addClass("larryms-unfold").removeClass("larryms-fold"),e(this).children("i").addClass("yun-fold-left").removeClass("yun-icon-collapse-left")):(e("#larry_layout").addClass("larryms-fold").removeClass("larryms-unfold"),e(this).children("i").addClass("yun-icon-collapse-left").removeClass("yun-fold-left"))}),e("#larryTheme").on("click",function(){l.open({type:1,id:"larry_theme_R",title:!1,anim:Math.ceil(6*Math.random()),offset:"r",closeBtn:!1,shade:.2,shadeClose:!0,skin:"layui-anim layui-anim-rl larryms-layer-right",area:"320px",success:function(t,o){var e=layui.cache.base+"templets/style/theme.css";layui.link(e),n.htmlRender("templets/theme",t)}})}),e("#clearCached").off("click").on("click",function(){n.cleanCached("larry_menu"),l.alert("缓存清除完成!本地存储数据也清理成功！",{icon:1,title:"系统提示",end:function(){top.location.reload()}})}),e("#logout").off("click").on("click",function(){var t=e(this).data("url");n.logOut(t)}),e("#fullScreen").bind("click",function(){n.fullScreen(e(this))}),e("#lock").mouseover(function(){l.tips("请按Alt+L快速锁屏！",e(this),{tips:[1,"#FF5722"],time:1500})}),e("#lock").off("click").on("click",function(){s()}),e(document).keydown(function(){return function(t){var o;window.event?o=t.keyCode:t.which&&(o=t.which);t.altKey&&76==o&&s()}(arguments[0])});var d=function(){this.themeColor={default:{topColor:"#1b8fe6",topThis:"#1958A6",topBottom:"#01AAED",leftColor:"#2f3a4f",leftRight:"#258ED8",navThis:"#1492DD",titBottom:"#1E9FFF",footColor:"#245c87",name:"default"},deepBlue:{topColor:"#1b8fe6",topThis:"#1958A6",topBottom:"#01AAED",leftColor:"#2f3a4f",leftRight:"#258ED8",navThis:"#1492DD",titBottom:"#1E9FFF",footColor:"#245c87",name:"deepBlue"},green:{topColor:"#2a877b",topThis:"#5FB878",topBottom:"#50A66F",leftColor:"#343742",leftRight:"#50A66F",navThis:"#56a66c",titBottom:"#50A66F",footColor:"#3e4e63",name:"green"},navy:{topColor:"#2f4056",topThis:"#0d51a9",topBottom:"#01AAED",leftColor:"#393d49",leftRight:"#1E9FFF",navThis:"#1E9FFF",titBottom:"#01AAED",footColor:"#343742",name:"navy"},orange:{topColor:"#F39C34",topThis:"#CD7013",topBottom:"#FF5722",leftColor:"#1d1f26",leftRight:"#FFB800",navThis:"#df7700",titBottom:"#FFB800",footColor:"#f2f2f2",footFont:"#666",name:"orange"},pink:{topColor:"#ff1493",topThis:"#ed1188",topBottom:"#ed1188",leftColor:"#1d1f26",leftRight:"#ed1188",navThis:"#ed1188",titBottom:"#ff1493",footColor:"#f2f2f2",footFont:"#666",name:"pink"},purple:{topColor:"#912cee",topThis:"#8927e4",topBottom:"#8927e4",leftColor:"#1d1f26",leftRight:"#912cee",navThis:"#912cee",titBottom:"#912cee",footColor:"#f2f2f2",footFont:"#666",name:"purple"},lightgreen:{topColor:"#20B2AA",topThis:"#37C6C0",topBottom:"#37C6C0",leftColor:"#1d1f26",leftRight:"#20B2AA",navThis:"#20B2AA",titBottom:"#20B2AA",footColor:"#f2f2f2",footFont:"#666",name:"lightgreen"},lightred:{topColor:"#d969e9",topThis:"#b943ca",topBottom:"#b943ca",leftColor:"#1d1f26",leftRight:"#d969e9",navThis:"#b943ca",titBottom:"#d969e9",footColor:"#f2f2f2",footFont:"#666",name:"lightred"},navyblue:{topColor:"#252b75",topThis:"#252961",topBottom:"#2f3367",leftColor:"#1d1f26",leftRight:"#252b75",navThis:"#252961",titBottom:"#252b75",footColor:"#f2f2f2",footFont:"#666",name:"navyblue"},dangreen:{topColor:"#7ac372",topThis:"#3baf2e",topBottom:"#3baf2e",leftColor:"#1d1f26",leftRight:"#7ac372",navThis:"#7ac372",titBottom:"#7ac372",footColor:"#f2f2f2",footFont:"#666",name:"dangreen"},skyblue:{topColor:"#7e9cfe",topThis:"#6b88fe",topBottom:"#6b88fe",leftColor:"#1d1f26",leftRight:"#7e9cfe",navThis:"#7e9cfe",titBottom:"#7e9cfe",footColor:"#f2f2f2",footFont:"#666",name:"skyblue"}}};function m(){"on"!==e("#larry_footer").data("show")?(e("#larry_footer").hide(),e("#larry_right").css({bottom:"0px"})):(e("#larry_footer").show(),e("#larry_right").css({bottom:"40px"}))}d.prototype.theme=function(t){var o="Larryms_theme_style",e=document.createElement("style"),r=layui.data("larryms"),l=a([".layui-header{background-color:{{d.topColor}} !important;border-bottom:3px solid {{d.topBottom}};}",".larryms-extend{border-left:1px solid {{d.topThis}} }",".larryms-nav-bar{background-color:{{d.topBottom}} !important;}",".larryms-extend .larryms-nav li.larryms-this{background:{{d.topThis}} !important; }",".larryms-extend .larryms-nav li.larryms-nav-item:hover{background:{{d.topThis}} !important; }",".larryms-extend .larryms-nav li.larryms-this:hover{background:{{d.topThis}} }",".larryms-fold .larryms-header .larryms-topbar-left .larryms-switch{border-left:1px solid {{d.topThis}} !important;}",".larryms-extend  ul.layui-nav li.layui-nav-item:hover{background:{{d.topThis}} !important;}",".larryms-topbar-right .layui-nav-bar{background-color: {{d.navThis}} !important;}",".larryms-nav-tree .larryms-this,",".larryms-nav-tree .larryms-this>a{background-color:{{d.navThis}} !important;}",".larryms-body .larryms-left{border-right:2px solid {{d.leftRight}} !important;}",".layui-bg-black{background-color:{{d.leftColor}} !important;}",".larryms-body .larryms-left{background:{{d.leftColor}} !important;}","ul.larryms-tab-title .layui-this{background:{{d.navThis}} !important;}",".larryms-right .larryms-tab .larryms-title-box{border-bottom:1px solid  {{d.titBottom}};}",".larryms-right .larryms-tab .larryms-title-box .larryms-tab-title{border-bottom:1px solid  {{d.titBottom}};}",".larryms-layout .larryms-footer{background:{{d.footColor}} !important;color:{{d.footFont}} !important;}"].join("")).render(t),n=document.getElementById(o);"styleSheet"in e?(e.setAttribute("type","text/css"),e.styleSheet.cssText=l):e.innerHTML=l,e.id=o,n&&i[0].removeChild(n),i[0].appendChild(e),r.theme=r.theme||{},layui.each(t,function(t,o){r.theme[t]=o}),layui.data("larryms",{key:"theme",value:r.theme})},d.prototype.init=function(){var t=layui.data("larryms").theme,o=layui.data("larryms").systemSet;void 0!==t&&(console.log(t.name),this.theme(t),"default"==t.name&&e("#Larryms_theme_style").empty()),void 0!==o?(r.tabSet({tabSession:o.tabCache,autoRefresh:o.tabRefresh}),e("#larry_footer").data("show",o.footSet)):layui.data("larryms",{key:"systemSet",value:{tabCache:r.config.tabSession,tabRefresh:r.config.autoRefresh,fullScreen:!1,footSet:e("#larry_footer").data("show")}}),m()},d.prototype.footInit=function(t){e("#larry_footer").data("show",t),m()},e(window).on("resize",function(){var t=e(window).width();t>=1200?(e("#larry_layout").removeClass("larryms-mobile-layout"),e("#larry_layout").addClass("larryms-unfold").removeClass("larryms-fold"),e("#menufold").children("i.larry-icon").addClass("yun-fold-left").removeClass("yun-icon-collapse-left")):t>767&&t<1200?(e("#larry_layout").removeClass("larryms-mobile-layout"),e("#larry_layout").addClass("larryms-fold").removeClass("larryms-unfold"),e("#menufold").children("i.larry-icon").addClass("yun-icon-collapse-left").removeClass("yun-fold-left")):t<=767&&t>319?(e("#larry_layout").removeClass("larryms-fold"),e("#larry_layout").removeClass("larryms-unfold")):t<=319&&n.error("主人别拖了，没有屏幕宽度小于320的，布局会乱的！",n.tit[1])}).resize();var c=new d;c.init(),o("Index",c)})}});
+layui.use(['jquery', 'carousel'], function () {
+    var $ = layui.$;
+    var carousel = layui.carousel;
+    var device = layui.device;
+
+    // 渲染轮播
+    carousel.render({
+        elem: '.layui-carousel',
+        width: '100%',
+        height: '60px',
+        arrow: 'none',
+        autoplay: true,
+        trigger: device.ios || device.android ? 'click' : 'hover',
+        anim: 'fade'
+    });
+
+    $(function () {
+        //会员来源
+        statistics1();
+
+        //周会员增量
+        statistics2();
+
+        //数据统计
+        statistics3();
+    });
+
+    /**
+     * 会员来源
+     */
+    function statistics1() {
+        var themeName = '';
+        var myChart = echarts.init(document.getElementById('larryCount1'), themeName);
+        var data = genData(50);
+        var option = {
+            title: {
+                text: '同名数量统计',
+                subtext: '纯属虚构',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                type: 'scroll',
+                orient: 'vertical',
+                right: 10,
+                top: 20,
+                bottom: 20,
+                data: data.legendData,
+
+                selected: data.selected
+            },
+            series: [
+                {
+                    name: '姓名',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['40%', '50%'],
+                    data: data.seriesData,
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        function genData(count) {
+            var nameList = [
+                '赵', '钱', '孙', '李', '周', '吴', '郑', '王', '冯', '陈', '褚', '卫', '蒋', '沈', '韩', '杨', '朱', '秦', '尤', '许', '何', '吕', '施', '张', '孔', '曹', '严', '华', '金', '魏', '陶', '姜', '戚', '谢', '邹', '喻', '柏', '水', '窦', '章', '云', '苏', '潘', '葛', '奚', '范', '彭', '郎', '鲁', '韦', '昌', '马', '苗', '凤', '花', '方', '俞', '任', '袁', '柳', '酆', '鲍', '史', '唐', '费', '廉', '岑', '薛', '雷', '贺', '倪', '汤', '滕', '殷', '罗', '毕', '郝', '邬', '安', '常', '乐', '于', '时', '傅', '皮', '卞', '齐', '康', '伍', '余', '元', '卜', '顾', '孟', '平', '黄', '和', '穆', '萧', '尹', '姚', '邵', '湛', '汪', '祁', '毛', '禹', '狄', '米', '贝', '明', '臧', '计', '伏', '成', '戴', '谈', '宋', '茅', '庞', '熊', '纪', '舒', '屈', '项', '祝', '董', '梁', '杜', '阮', '蓝', '闵', '席', '季', '麻', '强', '贾', '路', '娄', '危'
+            ];
+            var legendData = [];
+            var seriesData = [];
+            var selected = {};
+            for (var i = 0; i < 50; i++) {
+                name = Math.random() > 0.65
+                    ? makeWord(4, 1) + '·' + makeWord(3, 0)
+                    : makeWord(2, 1);
+                legendData.push(name);
+                seriesData.push({
+                    name: name,
+                    value: Math.round(Math.random() * 100000)
+                });
+                selected[name] = i < 6;
+            }
+
+            return {
+                legendData: legendData,
+                seriesData: seriesData,
+                selected: selected
+            };
+
+            function makeWord(max, min) {
+                var nameLen = Math.ceil(Math.random() * max + min);
+                var name = [];
+                for (var i = 0; i < nameLen; i++) {
+                    name.push(nameList[Math.round(Math.random() * nameList.length - 1)]);
+                }
+                return name.join('');
+            }
+        };
+        myChart.setOption(option);
+
+        window.onresize = function () {
+            myChart.resize();
+        };
+    }
+
+    /**
+     * 周会员增量
+     */
+    function statistics2() {
+        var themeName = '';
+        var myChart = echarts.init(document.getElementById('larryCount2'), themeName);
+        var xAxisData = [];
+        var data1 = [];
+        var data2 = [];
+        for (var i = 0; i < 100; i++) {
+            xAxisData.push('类目' + i);
+            data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
+            data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
+        }
+
+        var option = {
+            title: {
+                text: '柱状图动画延迟'
+            },
+            legend: {
+                data: ['bar', 'bar2'],
+                align: 'left'
+            },
+            toolbox: {
+                // y: 'bottom',
+                feature: {
+                    magicType: {
+                        type: ['stack', 'tiled']
+                    },
+                    dataView: {},
+                    saveAsImage: {
+                        pixelRatio: 2
+                    }
+                }
+            },
+            tooltip: {},
+            xAxis: {
+                data: xAxisData,
+                silent: false,
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {},
+            series: [{
+                name: 'bar',
+                type: 'bar',
+                data: data1,
+                animationDelay: function (idx) {
+                    return idx * 10;
+                }
+            }, {
+                name: 'bar2',
+                type: 'bar',
+                data: data2,
+                animationDelay: function (idx) {
+                    return idx * 10 + 100;
+                }
+            }],
+            animationEasing: 'elasticOut',
+            animationDelayUpdate: function (idx) {
+                return idx * 5;
+            }
+        };
+        myChart.setOption(option);
+
+        window.onresize = function () {
+            myChart.resize();
+        };
+    }
+
+
+    /**
+     * 数据统计
+     */
+    function statistics3() {
+        var themeName = '';
+        var myChart = echarts.init(document.getElementById('larryCount3'), themeName),
+            option = {
+                tooltip: {
+                    trigger: 'axis'
+                },
+                toolbox: {
+                    show: true,
+                    y: 'bottom',
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                calculable: true,
+                legend: {
+                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎', '百度', '谷歌', '必应', '其他']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        splitLine: {show: false},
+                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        position: 'right'
+                    }
+                ],
+                series: [
+                    {
+                        name: '直接访问',
+                        type: 'bar',
+                        data: [320, 332, 301, 334, 390, 330, 320]
+                    },
+                    {
+                        name: '邮件营销',
+                        type: 'bar',
+                        tooltip: {trigger: 'item'},
+                        stack: '广告',
+                        data: [120, 132, 101, 134, 90, 230, 210]
+                    },
+                    {
+                        name: '联盟广告',
+                        type: 'bar',
+                        tooltip: {trigger: 'item'},
+                        stack: '广告',
+                        data: [220, 182, 191, 234, 290, 330, 310]
+                    },
+                    {
+                        name: '视频广告',
+                        type: 'bar',
+                        tooltip: {trigger: 'item'},
+                        stack: '广告',
+                        data: [150, 232, 201, 154, 190, 330, 410]
+                    },
+                    {
+                        name: '搜索引擎',
+                        type: 'line',
+                        data: [862, 1018, 964, 1026, 1679, 1600, 1570]
+                    },
+
+                    {
+                        name: '搜索引擎细分',
+                        type: 'pie',
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c} ({d}%)'
+                        },
+                        center: [160, 130],
+                        radius: [0, 50],
+                        itemStyle: {
+                            normal: {
+                                labelLine: {
+                                    length: 20
+                                }
+                            }
+                        },
+                        data: [
+                            {value: 1048, name: '百度'},
+                            {value: 251, name: '谷歌'},
+                            {value: 147, name: '必应'},
+                            {value: 102, name: '其他'}
+                        ]
+                    }
+                ]
+            };
+
+        myChart.setOption(option);
+
+        window.onresize = function () {
+            myChart.resize();
+        }
+    }
+
+});

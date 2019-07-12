@@ -1,16 +1,22 @@
 <!-- 脚部开始   -->
+<!--<script type="text/javascript" src="__ADMIN__/js/common.js?v={$Think.env.app_debug?time():'2.0.7'}"></script>-->
 <script type="text/javascript">
-layui.cache.page = 'think_{$app}'; 
-//设定扩展的Layui模块的所在目录，一般用于外部模块扩展
-layui.config({
-	version:"?v={$Think.env.app_debug?time():'2.0.7'}",
-	base:'__ADMIN__'
-}).extend({
-    larry:'/js/base',
-    func:'/module/think_func',
-}).use(['larry']);
-</script>
+    layui.config({
+        version: "{$Think.env.app_debug?time():'2.0.7'}",
+        base: '__ADMIN__/lib/'
+    }).extend({
+        module: 'module/think_{$app}',
+        admin: "../js/admin",
+        func: 'module/think_func',
+    }).use(['func', 'module', 'admin'], function () {
+        var admin = layui.admin;
 
+        // 移除loading动画
+        setTimeout(function () {
+            admin.removeLoading();
+        }, window == top ? 600 : 100);
+    });
+</script>
 </body>
 </html>
 <!-- 脚部结束   -->
