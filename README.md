@@ -106,28 +106,28 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 ## 效果图展示
 
 #### 1、系统登录
- ![系统登录](http://images.tp5.1.rxthink.cn/1.png)
+ ![系统登录](http://images.pro5.1.rxthink.cn/1.png)
  
 #### 2、系统主页
- ![系统主页](http://images.tp5.1.rxthink.cn/2.png)
+ ![系统主页](http://images.pro5.1.rxthink.cn/2.png)
  
-#### 3、func.js方法类库
- ![JS核心类库](http://images.tp5.1.rxthink.cn/3.png)
+#### 3、图片裁剪
+ ![图片裁剪](http://images.pro5.1.rxthink.cn/3.png)
  
-#### 4、common.js函数类库
- ![JS核心类库](http://images.tp5.1.rxthink.cn/4.png)
+#### 4、部门管理
+ ![部门管理](http://images.pro5.1.rxthink.cn/4.png)
  
-#### 5、列表JS案例
- ![列表JS案例](http://images.tp5.1.rxthink.cn/5.png)
+#### 5、缓存基类封装
+ ![底层缓存基类封装](http://images.pro5.1.rxthink.cn/5.png)
  
-#### 6、缓存基类封装
- ![底层缓存基类封装](http://images.tp5.1.rxthink.cn/6.png)
+#### 6、模型基类封装
+ ![模型基类封装](http://images.pro5.1.rxthink.cn/6.png)
  
-#### 7、模型基类封装
- ![模型基类封装](http://images.tp5.1.rxthink.cn/7.png)
+#### 7、common.js函数类库
+ ![JS核心类库](http://images.pro5.1.rxthink.cn/7.png)
  
-#### 8、系统公共函数封装
- ![系系统公共函数封装](http://images.tp5.1.rxthink.cn/9.png)
+#### 8、func.js方法类库
+ ![JS核心类库](http://images.pro5.1.rxthink.cn/8.png)
 
 ## 部署说明
 
