@@ -26,8 +26,8 @@ body {
 }
 
 .login-body > .layui-card {
-    max-width: 400px;
-    margin: 80px auto;
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 .login-body .layui-card-header {

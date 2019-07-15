@@ -10,29 +10,29 @@
 // +----------------------------------------------------------------------
 
 // 定义根域名
-defined('URL_DOMAIN') or define('URL_DOMAIN', '.rxthink.com');
+defined('URL_DOMAIN') or define('URL_DOMAIN', '.rxthink.vip');
 // 定义网站域名
-defined('SITE_URL') or define('SITE_URL', 'http://www.rxthink.com');
+defined('SITE_URL') or define('SITE_URL', 'http://www.rxthink.vip');
 // 定义后台域名
-defined('MAIN_URL') or define('MAIN_URL', 'http://admin.rxthink.com');
+defined('MAIN_URL') or define('MAIN_URL', 'http://admin.rxthink.vip');
 // 定义WAP站域名
-defined('WAP_URL') or define('WAP_URL', 'http://m.rxthink.com');
+defined('WAP_URL') or define('WAP_URL', 'http://m.rxthink.vip');
 // 定义接口域名
-defined('API_URL') or define('API_URL', 'http://api.rxthink.com');
+defined('API_URL') or define('API_URL', 'http://api.rxthink.vip');
 // 定义脚本域名
-defined('SCRIPT_URL') or define('SCRIPT_URL', 'http://script.rxthink.com');
+defined('SCRIPT_URL') or define('SCRIPT_URL', 'http://script.rxthink.vip');
 // 定义静态域名
-defined('STATIC_URL') or define('STATIC_URL', 'http://static.rxthink.com');
+defined('STATIC_URL') or define('STATIC_URL', 'http://static.rxthink.vip');
 // 定义上传域名
-defined('UPLOAD_URL') or define('UPLOAD_URL', 'http://upload.rxthink.com');
+defined('UPLOAD_URL') or define('UPLOAD_URL', 'http://upload.rxthink.vip');
 // 定义临时上传域名
-defined('UPLOAD_TEMP_URL') or define('UPLOAD_TEMP_URL', 'http://upload.rxthink.com/temp');
+defined('UPLOAD_TEMP_URL') or define('UPLOAD_TEMP_URL', 'http://upload.rxthink.vip/temp');
 // 定义普通图片域名
-defined('IMG_URL') or define('IMG_URL', 'http://img.rxthink.com');
+defined('IMG_URL') or define('IMG_URL', 'http://img.rxthink.vip');
 // 定义文章图片域名
-defined('IMAGE_URL') or define('IMAGE_URL', 'http://images.rxthink.com');
+defined('IMAGE_URL') or define('IMAGE_URL', 'http://images.rxthink.vip');
 // 定义文件上传目录
-defined('ATTACHMENT_PATH') or define('ATTACHMENT_PATH', 'C:\xampp\htdocs\RXThinkCMF\RXThinkCMF_TP5.1_DEV\public\uploads');
+defined('ATTACHMENT_PATH') or define('ATTACHMENT_PATH', 'C:\xampp\htdocs\RXThinkCMF\RXThinkCMF_TP5.1_PRO\public\uploads');
 // 定义图片上传目录
 defined('IMG_PATH') or define('IMG_PATH', ATTACHMENT_PATH . "/img");
 // 定义临时文件目录
@@ -52,7 +52,7 @@ return [
     // 企业简称
     'nick_name' => 'RXThinkCMF_TP5.1',
     // 数据库链接
-    'db_config' => 'mysql://root:@127.0.0.1:3306/rxthink.v5.1',
+    'db_config' => 'mysql://root:111111@127.0.0.1:3306/rxthink.v5.1',
     // 数据表前缀
     'db_prefix' => 'think_',
     // 数据库编码
