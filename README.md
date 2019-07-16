@@ -11,11 +11,11 @@
 	<a href="https://www.layui.com/">
         <img src="https://img.shields.io/badge/layui-2.4.5-blue.svg" alt="layui">
     </a>
-	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/stargazers">
-	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/star.svg?theme=dark" />
+	<a href='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/stargazers'>
+	    <img src='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/star.svg?theme=dark' alt='star'></img>
 	</a>
-	<a href="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/members">
-	    <img src="https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/fork.svg?theme=dark" />
+	<a href='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/members'>
+	    <img src='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/fork.svg?theme=dark' alt='fork'></img>
 	</a>
 </p>
 
@@ -24,13 +24,13 @@
 </p>
 
 ### 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！
-### 如果您想获悉项目实时更新信息，您可以点右上角 "Fork" 感谢您的支持！
+### 如果您想获悉项目实时更新信息，您可以点右上角 <a href='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO'><img src='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a> 感谢您的支持！
 ### 官方网址：http://www.rxthink.cn/
-### 帮助文档：http://docs.v5.1.rxthink.cn/
+### 帮助文档：http://docs.pro5.1.rxthink.cn/
 ### 本项目还在不断开发完善中,如有建议或问题请官方论坛反馈，论坛地址:http://www.rxthink.cn
 
 ## 项目介绍
-RXThinkCMF_TP5.1_PRO 基于 ThinkPHP5.1 +Layui2.4.5 开发权限(RBAC)及内容管理框架，框架中集成了权限管理、模块管理、插件管理、钩子管理、数据库管理、富文本编辑器(已集成ueditor,kindeditor)，后台支持多主题切换、布局管理、广告管理、配置管理、字典管理、切图管理、CMS内容管理等常用功能模块，以方便开发者快速构建自己的应用。RXThinkCMF_TP5.1_PRO框架专注于为中小企业提供最佳的行业基础后台框架解决方案，执行效率、扩展性、稳定性值得信赖，操作体验流畅，使用非常优化，欢迎大家使用及进行二次开发。
+RXThinkCMF_TP5.1_PRO旗舰版 基于 ThinkPHP5.1 +Layui2.4.5 开发权限(RBAC)及内容管理框架，框架中集成了权限管理、模块管理、插件管理、钩子管理、数据库管理、富文本编辑器(已集成ueditor,kindeditor)，后台支持多主题切换、布局管理、广告管理、配置管理、字典管理、切图管理、CMS内容管理等常用功能模块，以方便开发者快速构建自己的应用。RXThinkCMF_TP5.1_PRO框架专注于为中小企业提供最佳的行业基础后台框架解决方案，执行效率、扩展性、稳定性值得信赖，操作体验流畅，使用非常优化，欢迎大家使用及进行二次开发。
 
 * 模块化：全新的架构和模块化的开发机制，便于灵活扩展和二次开发。
 * 模型/栏目/分类信息体系：通过栏目和模型绑定，以及不同的模型类型，不同栏目可以实现差异化的功能，轻松实现诸如资讯、下载、讨论和图片等功能。通过分类信息和栏目绑定，可以自动建立索引表，轻松实现复杂的信息检索。
@@ -76,8 +76,8 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 | 版本名称 | 说明 | 地址 |
 | :---: | :---: | :---: |
-| RXThinkCMF旗舰版 v2.0 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO |
-| RXThinkCMF专业版 v2.0 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO |
+| RXThinkCMF_TP5.1旗舰版 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO |
+| RXThinkCMF_TP5.1专业版 | 最新开源版本，master分支 | https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1 |
 
 
 ## 后台演示（用户名:admin 密码:admin123）

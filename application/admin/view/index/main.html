@@ -36,52 +36,128 @@
     }
 
 </style>
+<style>
+    /** 统计快捷方式样式 */
+    .console-link-block {
+        display: block;
+        position: relative;
+        color: #fff;
+        font-size: 18px;
+        padding: 25px 20px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, .15);
+        background-color: rgb(155, 197, 57);
+    }
+
+    .console-link-block .console-link-block-num {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .console-link-block .console-link-block-icon {
+        height: 70px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .console-link-block .console-link-block-band {
+        background-color: rgb(227, 42, 22);
+        font-size: 14px;
+        position: absolute;
+        width: 80px;
+        padding: 2px 0;
+        text-align: center;
+        transform: rotate(45deg);
+        right: -21px;
+        top: 8px;
+        color: rgba(255, 255, 255, .9);
+    }
+
+    /** //统计快捷方式样式end */
+
+    /** 设置每个快捷块的颜色 */
+    #consoleLink > div:first-child .console-link-block {
+        background-color: rgb(155, 197, 57);
+    }
+
+    #consoleLink > div:nth-child(2) .console-link-block {
+        background-color: rgb(85, 165, 234);
+    }
+
+    #consoleLink > div:nth-child(3) .console-link-block {
+        background-color: rgb(157, 175, 291);
+    }
+
+    #consoleLink > div:nth-child(4) .console-link-block {
+        background-color: rgb(245, 145, 162);
+    }
+
+    #consoleLink > div:nth-child(5) .console-link-block {
+        background-color: rgb(254, 170, 79);
+    }
+
+    #consoleLink > div:last-child .console-link-block {
+        background-color: rgb(64, 212, 176);
+    }
+
+    /** //设置每个快捷块的颜色end */
+</style>
 
 <!-- 正文开始 -->
 <div class="layui-fluid">
-    <div class="layui-row layui-col-space15">
-        <div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
-            <div class="layui-card">
-                <div class="layui-card-header">
-                    访问量<span class="layui-badge layui-bg-blue pull-right">周</span>
-                </div>
-                <div class="layui-card-body">
-                    <p class="lay-big-font">99,666</p>
-                    <p>总计访问量<span class="pull-right">88万 <i class="layui-icon layui-icon-flag"></i></span></p>
-                </div>
+
+    <!-- 快捷方式 -->
+    <div id="consoleLink" class="layui-row layui-col-space15">
+        <div class="layui-col-lg2 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/user.html" ew-title="外出申请">
+                <div class="console-link-block-num">15</div>
+                <div class="console-link-block-text">外出申请</div>
+                <div class="console-link-block-band">待审批</div>
+                <img class="console-link-block-icon" src="__ADMIN__/images/homepic1.png">
             </div>
         </div>
-        <div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
-            <div class="layui-card">
-                <div class="layui-card-header">
-                    下载<span class="layui-badge layui-bg-black pull-right">月</span>
-                </div>
-                <div class="layui-card-body">
-                    <p class="lay-big-font">33,555</p>
-                    <p>新下载<span class="pull-right">10% <i class="layui-icon">&#xe601</i></span></p>
-                </div>
+        <div class="layui-col-lg2 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/role.html" ew-title="请假审批">
+                <div class="console-link-block-num">13</div>
+                <div class="console-link-block-text">请假审批</div>
+                <div class="console-link-block-band">待审批</div>
+                <img class="console-link-block-icon" src="__ADMIN__/images/homepic2.png">
             </div>
         </div>
-        <div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
-            <div class="layui-card">
-                <div class="layui-card-header">
-                    Start<span class="layui-badge layui-bg-green pull-right">周</span>
-                </div>
-                <div class="layui-card-body">
-                    <p class="lay-big-font">99,666</p>
-                    <p>总Start数<span class="pull-right">88万 <i class="layui-icon layui-icon-rate"></i></span></p>
-                </div>
+        <div class="layui-col-lg2 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/authorities.html" ew-title="研发周报">
+                <img class="console-link-block-icon" src="__ADMIN__/images/homepic3.png">
+                <div class="console-link-block-num">22</div>
+                <div class="console-link-block-text">研发周报</div>
+                <div class="console-link-block-band">去查看</div>
             </div>
         </div>
-        <div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
-            <div class="layui-card">
-                <div class="layui-card-header">
-                    活跃用户<span class="layui-badge layui-bg-orange pull-right">月</span>
-                </div>
-                <div class="layui-card-body">
-                    <p class="lay-big-font">66,666</p>
-                    <p>最近一个月<span class="pull-right">15% <i class="layui-icon layui-icon-user"></i></span></p>
-                </div>
+        <div class="layui-col-lg2 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/loginRecord.html" ew-title="研发月报">
+                <img class="console-link-block-icon" src="__ADMIN__/images/homepic4.png">
+                <div class="console-link-block-num">18</div>
+                <div class="console-link-block-text">研发月报</div>
+                <div class="console-link-block-band">去查看</div>
+            </div>
+        </div>
+        <div class="layui-col-lg2 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/plugin/dialog.html" ew-title="拜访记录">
+                <img class="console-link-block-icon" src="__ADMIN__/images/homepic5.png">
+                <div class="console-link-block-num">11</div>
+                <div class="console-link-block-text">拜访记录</div>
+                <div class="console-link-block-band">去查看</div>
+            </div>
+        </div>
+        <div class="layui-col-lg2 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/plugin/notice.html" ew-title="项目申报">
+                <img class="console-link-block-icon" src="__ADMIN__/images/homepic6.png">
+                <div class="console-link-block-num">26</div>
+                <div class="console-link-block-text">项目申报</div>
+                <div class="console-link-block-band">待审批</div>
             </div>
         </div>
     </div>
@@ -89,9 +165,9 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-lg8 layui-col-md7">
             <div class="layui-card">
-                <div class="layui-card-header">更新日志</div>
+                <div class="layui-card-header">图标统计</div>
                 <div class="layui-card-body">
-                    <div class="count-data" id="larryCount1">
+                    <div class="count-data" id="larryCount3">
                     </div>
                 </div>
             </div>

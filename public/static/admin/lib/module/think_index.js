@@ -15,11 +15,11 @@ layui.use(['jquery', 'carousel'], function () {
     });
 
     $(function () {
-        //会员来源
-        statistics1();
-
-        //周会员增量
-        statistics2();
+        // //会员来源
+        // statistics1();
+        //
+        // //周会员增量
+        // statistics2();
 
         //数据统计
         statistics3();
