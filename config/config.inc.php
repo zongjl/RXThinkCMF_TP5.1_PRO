@@ -32,7 +32,7 @@ defined('IMG_URL') or define('IMG_URL', 'http://img.rxthink.vip');
 // 定义文章图片域名
 defined('IMAGE_URL') or define('IMAGE_URL', 'http://images.rxthink.vip');
 // 定义文件上传目录
-defined('ATTACHMENT_PATH') or define('ATTACHMENT_PATH', 'C:\xampp\htdocs\RXThinkCMF\RXThinkCMF_TP5.1_PRO\public\uploads');
+defined('ATTACHMENT_PATH') or define('ATTACHMENT_PATH', 'D:\sites\RXThinkCMF\RXThinkCMF_TP5.1_PRO\public\uploads');
 // 定义图片上传目录
 defined('IMG_PATH') or define('IMG_PATH', ATTACHMENT_PATH . "/img");
 // 定义临时文件目录
@@ -50,17 +50,17 @@ return [
     // 企业全称
     'site_name' => 'RXThinkCMF_TP5.1旗舰版',
     // 企业简称
-    'nick_name' => 'RXThinkCMF_TP5.1',
+    'nick_name' => 'RXThinkCMF',
     // 数据库链接
     'db_config' => 'mysql://root:@127.0.0.1:3306/rxthink.v5.1',
     // 数据表前缀
     'db_prefix' => 'think_',
     // 数据库编码
     'db_charset' => 'utf8mb4',
-//    // 缓存驱动类型及链接(redis)
-//    'cache_config' => 'redis://:@127.0.0.1:6379/1',
-//    // 缓存驱动类型及链接(memcache)
-//    'cache_config' => 'memcache://:@127.0.0.1:11211',
+    //    // 缓存驱动类型及链接(redis)
+    //    'cache_config' => 'redis://:@127.0.0.1:6379/1',
+    //    // 缓存驱动类型及链接(memcache)
+    //    'cache_config' => 'memcache://:@127.0.0.1:11211',
     // 缓存驱动(文件类型)
     'cache_config' => 'file',
     // 缓存前缀
@@ -69,8 +69,8 @@ return [
     'upload' => [
         //上传图片参数配置
         'image_config' => [
-            // 图片后缀限制
-            'upload_image_ext' => 'jpg|png|gif|bmp|jpeg',
+        // 图片后缀限制
+        'upload_image_ext' => 'jpg|png|gif|bmp|jpeg',
             // 最大上传文件大小(默认：10MB)
             'upload_image_size' => 1024 * 10,
             // 最大上传数量限制(默认：9张)
