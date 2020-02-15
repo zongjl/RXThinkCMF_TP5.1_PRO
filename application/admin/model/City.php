@@ -23,7 +23,7 @@ use app\common\model\BaseModel;
 class City extends BaseModel
 {
     // 设置数据表
-    protected $table = 'think_city';
+    protected $table = DB_PREFIX . 'city';
 
     /**
      * 初始化模型
@@ -48,7 +48,7 @@ class City extends BaseModel
      */
     public function getInfo($id)
     {
-        $info = parent::getInfo($id);
+        $info = parent::getInfo($id, true);
         if ($info) {
             // TODO...
         }

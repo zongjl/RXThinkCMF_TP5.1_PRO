@@ -44,7 +44,6 @@ class Index extends AdminBase
     {
         // 取消模板布局
         $this->view->engine->layout(false);
-
         // 获取菜单
         $menuService = new MenuService();
         $result = $menuService->getNavbarMenu($this->system_auth);

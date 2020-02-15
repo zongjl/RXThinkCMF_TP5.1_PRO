@@ -23,7 +23,7 @@ use app\common\model\BaseModel;
 class ItemCate extends BaseModel
 {
     // 设置数据表
-    protected $table = 'think_item_cate';
+    protected $table = DB_PREFIX . 'item_cate';
 
     /**
      * 初始化模型
@@ -92,6 +92,7 @@ class ItemCate extends BaseModel
         if ($item_id) {
             $map['item_id'] = $item_id;
         }
+        $list = [];
         $result = $this->where($map)->order("sort asc")->select();
         if ($result) {
             foreach ($result as $val) {
