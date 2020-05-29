@@ -77,12 +77,17 @@ class AdminService extends BaseService
         $avatar = trim($data['avatar']);
         $username = trim($data['username']);
         $password = trim($data['password']);
-
+        // 角色处理
+        if ($data['roleIds']) {
+            $roleIds = array_keys($data['roleIds']);
+            if ($roleIds) {
+                $data['role_ids'] = implode(',', $roleIds);
+            }
+        }
         //数据处理
         if (strpos($avatar, "temp")) {
             $data['avatar'] = save_image($avatar, 'admin');
         }
-
         //密码加密处理
         if ($password) {
             $data['password'] = get_password($password . $username);
@@ -90,7 +95,6 @@ class AdminService extends BaseService
             unset($data['password']);
         }
         $data['entry_date'] = isset($data['entry_date']) ? strtotime($data['entry_date']) : 0;
-
         return parent::edit($data);
     }
 
@@ -113,74 +117,6 @@ class AdminService extends BaseService
     }
 
     /**
-     * 设置人员角色
-     * @return Ambigous|array
-     * @throws \think\db\exception\BindParamException
-     * @throws \think\db\exception\DataNotFoundException
-     * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
-     * @throws \think\exception\PDOException
-     * @author 牧羊人
-     * @date 2019/4/18
-     */
-    public function setRole()
-    {
-        $param = request()->param();
-        $admin_id = (int)$param['admin_id'];
-        $role_list = $param['role'];
-        if (!is_array($role_list)) {
-            return message('请选择需要配置的角色', false);
-        }
-
-        //删除现有数据
-        $admin_rmr_model = new AdminRmr();
-        $admin_rmr_list = $admin_rmr_model->where(['admin_id' => $admin_id, 'mark' => 1])->select();
-        if ($admin_rmr_list) {
-            foreach ($admin_rmr_list as $val) {
-                $admin_rmr_model->drop($val['id']);
-            }
-        }
-
-        $totalNum = 0;
-        $roleIds = [];
-        if (is_array($role_list)) {
-            $roleIds = array_keys($role_list);
-            foreach ($roleIds as $val) {
-                $data = [
-                    'admin_id' => $admin_id,
-                    'role_id' => $val,
-                ];
-
-                //获取已经存在记录ID
-                $info = $admin_rmr_model->where($data)->find();
-                if ($info) {
-                    $data['mark'] = 1;
-                }
-
-                //更新记录
-                $rowId = $admin_rmr_model->edit($data);
-                if ($rowId) {
-                    $totalNum++;
-                }
-            }
-        }
-        if ($totalNum != count($roleIds)) {
-            return message("角色数据异常", false);
-        }
-
-        //设置用户角色信息
-        $role_ids = '';
-        if (count($roleIds)) {
-            $role_ids = implode(',', $roleIds);
-        }
-        $data = [
-            'id' => $admin_id,
-            'role_ids' => $role_ids,
-        ];
-        return parent::edit($data);
-    }
-
-    /**
      * 重置密码
      * @return Ambigous|array 返回结果
      * @author 牧羊人
@@ -188,6 +124,7 @@ class AdminService extends BaseService
      */
     public function resetPwd()
     {
+        return message("演示版,禁止操作", false);
         $data = request()->param();
         $adminId = (int)$data['id'];
         $info = $this->model->getInfo($adminId);

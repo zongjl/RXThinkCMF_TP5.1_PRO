@@ -80,7 +80,7 @@ class Menu extends AdminBase
         $pid = input("get.pid", 0);
 
         return parent::edit([
-            'parent_id' => $pid,
+            'pid' => $pid,
             'is_show' => 1,
         ]);
     }

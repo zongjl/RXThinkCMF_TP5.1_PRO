@@ -50,7 +50,7 @@ class Admindep extends AdminBase
             $info = $this->model->getInfo($pid);
         }
         return parent::edit([
-            'parent_id' => $pid,
+            'pid' => $pid,
             'parent_name' => isset($info['name']) ? $info['name'] : '',
         ]);
     }

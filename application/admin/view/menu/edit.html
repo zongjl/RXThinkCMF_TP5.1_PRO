@@ -27,7 +27,7 @@
 		<div class="layui-inline">
 			<label class="layui-form-label">上级菜单：</label>
 			<div class="layui-input-inline">
-				{:widget('common/singleSelect',array('parent_id|0|上级菜单|name|id',$menu_list,isset($info['parent_id']) ? $info['parent_id'] : 0))}
+				{:widget('common/singleSelect',array('pid|0|上级菜单|name|id',$menu_list,isset($info['pid']) ? $info['pid'] : 0))}
 			</div>
 		</div>
 	</div>

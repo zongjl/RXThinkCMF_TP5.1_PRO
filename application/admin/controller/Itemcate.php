@@ -49,9 +49,9 @@ class Itemcate extends AdminBase
      */
     public function edit()
     {
-        $parent_id = request()->param('pid');
-        if ($parent_id) {
-            $parent_info = $this->model->getInfo($parent_id);
+        $pid = request()->param('pid');
+        if ($pid) {
+            $parent_info = $this->model->getInfo($pid);
         }
 
         // 获取站点
@@ -60,7 +60,7 @@ class Itemcate extends AdminBase
         $this->assign('item_list', $item_list ? $item_list->toArray() : []);
 
         return parent::edit([
-            'parent_id' => $parent_id,
+            'pid' => $pid,
             'parent_name' => isset($parent_info['name']) ? $parent_info['name'] : '',
         ]);
     }

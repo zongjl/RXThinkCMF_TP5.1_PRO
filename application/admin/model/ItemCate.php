@@ -56,8 +56,8 @@ class ItemCate extends BaseModel
             }
 
             // 上级栏目
-            if ($info['parent_id']) {
-                $parent_info = $this->getInfo($info['parent_id']);
+            if ($info['pid']) {
+                $parent_info = $this->getInfo($info['pid']);
                 $info['parent_name'] = $parent_info['name'];
             }
 
@@ -74,7 +74,7 @@ class ItemCate extends BaseModel
     /**
      * 获取子级栏目
      * @param int $item_id 站点ID
-     * @param int $parent_id 上级ID
+     * @param int $pid 上级ID
      * @param bool $flag 是否获取子级
      * @return array 返回结果
      * @throws \think\db\exception\DataNotFoundException
@@ -83,10 +83,10 @@ class ItemCate extends BaseModel
      * @author 牧羊人
      * @date 2019/4/30
      */
-    public function getChilds($item_id = 0, $parent_id = 0, $flag = false)
+    public function getChilds($item_id = 0, $pid = 0, $flag = false)
     {
         $map = [
-            'parent_id' => $parent_id,
+            'pid' => $pid,
             'mark' => 1,
         ];
         if ($item_id) {
@@ -126,7 +126,7 @@ class ItemCate extends BaseModel
         do {
             $info = $this->getInfo($cate_id);
             $names[] = $info['name'];
-            $cate_id = $info['parent_id'];
+            $cate_id = $info['pid'];
         } while ($cate_id > 0);
         $names = array_reverse($names);
         if (strpos($names[1], $names[0]) === 0) {

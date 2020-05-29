@@ -134,6 +134,7 @@ class BaseService extends Model
      */
     public function edit()
     {
+//        return message("演示版,禁止操作", false);
         // 获取参数
         $argList = func_get_args();
         // 查询条件

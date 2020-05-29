@@ -50,19 +50,14 @@ class AdminDep extends BaseModel
     {
         $info = parent::getInfo($id, true);
         if ($info) {
-            // 获取上级部门
-            if ($info['parent_id']) {
-                $parent_info = $this->getInfo($info['parent_id']);
-                $info['parent_name'] = $parent_info['name'];
-            }
-
+            // TODO...
         }
         return $info;
     }
 
     /**
      * 获取子级
-     * @param int $parent_id 上级ID
+     * @param int $pid 上级ID
      * @param bool $flag 是否获取子级true或false
      * @return array
      * @throws \think\db\exception\DataNotFoundException
@@ -71,11 +66,11 @@ class AdminDep extends BaseModel
      * @author 牧羊人
      * @date 2019/5/7
      */
-    public function getChilds($parent_id = 0, $flag = false)
+    public function getChilds($pid = 0, $flag = false)
     {
         $list = [];
         $map = [
-            'parent_id' => $parent_id,
+            'pid' => $pid,
             'mark' => 1,
         ];
         $result = $this->where($map)->order("sort asc")->select();

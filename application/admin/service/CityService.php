@@ -43,7 +43,7 @@ class CityService extends BaseService
     {
         // 查询条件
         $map = [
-            ['parent_id', '>=', 1],
+            ['pid', '>=', 1],
         ];
         $list = $this->model->getAll($map);
         //返回结果

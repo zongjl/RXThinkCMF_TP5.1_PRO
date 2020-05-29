@@ -57,45 +57,4 @@ class AdminRole extends BaseModel
         }
         return $info;
     }
-
-    /**
-     * 获取角色权限
-     * @param $role_ids 角色ID
-     * @return array 返回结果
-     * @throws \think\db\exception\DataNotFoundException
-     * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
-     * @author 牧羊人
-     * @date 2019/4/21
-     */
-    public function getRoleAuth($role_ids)
-    {
-        if (!is_array($role_ids)) {
-            return [];
-        }
-        $list = [];
-        foreach ($role_ids as $val) {
-            $info = $this->getInfo($val);
-            if (!$info) {
-                continue;
-            }
-
-            $auth = isset($info['auth_list']) ? $info['auth_list'] : '';
-            if (!is_array($auth)) {
-                continue;
-            }
-
-            foreach ($auth as $kt => $vt) {
-                if (!in_array($kt, array_keys($list))) {
-                    $list[$kt] = [];
-                }
-                foreach ($vt as $v) {
-                    if (!in_array($v, $list[$kt])) {
-                        $list[$kt][] = $v;
-                    }
-                }
-            }
-        }
-        return $list;
-    }
 }

@@ -57,7 +57,7 @@ class City extends BaseModel
 
     /**
      * 获取子级
-     * @param int $parent_id 上级ID
+     * @param int $pid 上级ID
      * @param bool $flag 是否查询子级true或false
      * @return array
      * @throws \think\db\exception\DataNotFoundException
@@ -66,11 +66,11 @@ class City extends BaseModel
      * @author 牧羊人
      * @date 2019/6/10
      */
-    public function getChilds($parent_id, $flag = false)
+    public function getChilds($pid, $flag = false)
     {
         $list = [];
         $result = $this->where([
-            'parent_id' => $parent_id,
+            'pid' => $pid,
             'mark' => 1
         ])->order("id asc")->select();
         if ($result) {
@@ -114,7 +114,7 @@ class City extends BaseModel
             } else {
                 $names[] = $info['name'];
             }
-            $city_id = $info['parent_id'];
+            $city_id = $info['pid'];
         } while ($city_id > 1);
         $names = array_reverse($names);
         if (strpos($names[1], $names[0]) === 0) {

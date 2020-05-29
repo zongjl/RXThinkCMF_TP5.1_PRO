@@ -23,7 +23,15 @@ class Test extends AdminBase
 
     public function index()
     {
-        print_r(config());exit;
+//
+//        $info = $this->model->getInfo(1);
+//        for ($i = 0; $i < 100; $i++) {
+//            unset($info['id']);
+//            $adminMod = new \app\admin\model\Admin();
+//            $info['username'] = 'admin' . ($i + 1);
+//            $info['mobile'] = "15295504" . str_pad($i, 3, "0", STR_PAD_LEFT);
+//            $adminMod->edit($info);
+//        }
         return $this->fetch("test_index");
     }
 

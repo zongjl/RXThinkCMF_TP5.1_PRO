@@ -41,7 +41,16 @@ class MenuService extends BaseService
      */
     public function getList()
     {
-        $list = $this->model->getList([], 'sort asc');
+        $list = $this->model->getList([], 'id asc');
+        if ($list) {
+            foreach ($list as &$val) {
+                if (intval($val['type']) <= 2) {
+                    $val['open'] = true;
+                } else {
+                    $val['open'] = false;
+                }
+            }
+        }
         return message("操作成功", true, $list);
     }
 
@@ -93,7 +102,7 @@ class MenuService extends BaseService
 
             // 获取已存在的
             $menu_info = $this->model->getOne([
-                ['parent_id', '=', $menu_id],
+                ['pid', '=', $menu_id],
                 ['name', '=', $func_title],
                 ['type', '=', 4],
             ]);
@@ -107,7 +116,7 @@ class MenuService extends BaseService
             // 更新数据源
             $item = [
                 'id' => $update_id,
-                'parent_id' => $menu_id,
+                'pid' => $menu_id,
                 'name' => $func_arr[1],
                 'type' => 4,
                 'url' => "/" . ucfirst($name) . "/" . $func_name,
@@ -160,7 +169,7 @@ class MenuService extends BaseService
                     $info['font'] = "larry-icon";
                     $info['url'] = isset($info['to_url']) ? $info['to_url'] : '';
                     $item[] = $info;
-                    $key = (int)$info['parent_id'];
+                    $key = (int)$info['pid'];
                 } else {
                     $key = 0;
                 }

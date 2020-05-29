@@ -1,39 +1,11 @@
-<style>
-	.layui-layout-admin .layui-footer {
-		left: 0px;
-		padding: 10px 0;
-		text-align: center;
-		box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, .05);
-		background-color: white;
-	}
-</style>
-{if $button_type eq 1}
-<div class="layui-form-item layui-layout-admin">
-	<div class="layui-input-block">
-		<div class="layui-footer">
-			{if isset($button_submit)}
-			<button class="layui-btn" lay-submit="" lay-filter="submitForm">{$button_submit_title}</button>
-			{/if}
-			{if isset($button_close)}
-			<button type="button" class="layui-btn layui-btn-primary" onclick="formClose();">{$button_close_title}</button>
-			{/if}
-			{if isset($button_reset)}
-			<button type="reset" class="layui-btn layui-btn-normal">{$button_reset_title}</button>
-			{/if}
-		</div>
-	</div>
+<div class="layui-form-item text-center {if $button_type eq 1}model-form-footer{/if}">
+	{if isset($button_submit)}
+	<button class="layui-btn" lay-filter="submitForm" lay-submit="">{$button_submit_title}</button>
+	{/if}
+	{if isset($button_close)}
+	<button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">{$button_close_title}</button>
+	{/if}
+	{if isset($button_reset)}
+	<button type="reset" class="layui-btn layui-btn-normal">{$button_reset_title}</button>
+	{/if}
 </div>
-{else}
-<div class="layui-form-item">
-	<div class="layui-input-block">
-		{if isset($button_submit)}
-		<button class="layui-btn" lay-submit="" lay-filter="submitForm">{$button_submit_title}</button>
-		{/if}
-		{if isset($button_close)}
-			<button type="button" class="layui-btn layui-btn-primary" onclick="formClose();">{$button_close_title}</button>
-		{/if}{if isset($button_reset)}
-		<button type="reset" class="layui-btn layui-btn-normal">{$button_reset_title}</button>
-		{/if}
-	</div>
-</div>
-{/if}

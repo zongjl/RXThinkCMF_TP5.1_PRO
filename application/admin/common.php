@@ -16,13 +16,14 @@ if (!function_exists('message')) {
      * @param string $msg 提示语
      * @param bool $success 是否成功
      * @param array $data 结果数据
+     * @param int $code 错误码
      * @return array 返回消息对象
      * @author 牧羊人
      * @date 2019/4/5
      */
-    function message($msg = "操作成功", $success = true, $data = [])
+    function message($msg = "操作成功", $success = true, $data = [], $code = 0)
     {
-        $result = array("success" => $success, "msg" => $msg, "data" => $data);
+        $result = array("success" => $success, "msg" => $msg, "data" => $data, 'code' => $code);
         return $result;
     }
 }

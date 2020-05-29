@@ -24,11 +24,7 @@
 	{/if}
 </div>
 <script type="text/javascript">
-layui.config({
-	base: '__ADMIN__'
-}).extend({
-	croppers: '/extend/cropper/croppers',
-}).use(['upload','croppers'],function(){
+layui.use(['upload','croppers'],function(){
 	//声明变量
 	var layer = layui.layer
 	,upload = layui.upload
@@ -44,7 +40,7 @@ layui.config({
 	        ,saveW:{$crop_width}     //保存宽度
 	        ,saveH:{$crop_height}
 	        ,mark:{$crop_rate}    //选取比例
-	        ,area:'900px'  //弹窗宽度
+	        ,area:['750px','500px']  //弹窗宽度
 	        ,url: "/upload/uploadImage"
 	        ,done: function(url){ 
 	        	//上传完毕回调

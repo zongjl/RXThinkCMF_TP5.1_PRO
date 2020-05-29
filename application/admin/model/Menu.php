@@ -56,15 +56,15 @@ class Menu extends BaseModel
             }
 
             // 上级菜单
-            if ($info['parent_id']) {
-                $parent_info = $this->getInfo($info['parent_id']);
+            if ($info['pid']) {
+                $parent_info = $this->getInfo($info['pid']);
                 $info['parent_name'] = $parent_info['name'];
             }
 
             // 菜单地址
             if ($info['type'] == 3) {
                 $map = [
-                    'parent_id' => $id,
+                    'pid' => $id,
                     'type' => 4,
                     'name' => "查看",
                     'is_show' => 1,
@@ -81,7 +81,7 @@ class Menu extends BaseModel
 
     /**
      * 获取子级
-     * @param int $parent_id 上级ID
+     * @param int $pid 上级ID
      * @param bool $isMenu 是否菜单true或false
      * @return array
      * @throws \think\db\exception\DataNotFoundException
@@ -90,10 +90,10 @@ class Menu extends BaseModel
      * @author 牧羊人
      * @date 2019/4/21
      */
-    public function getChilds($parent_id = 0, $isMenu = true)
+    public function getChilds($pid = 0, $isMenu = true)
     {
         $map = [
-            'parent_id' => $parent_id,
+            'pid' => $pid,
             'mark' => 1,
         ];
         $result = $this->where($map)->order("sort asc")->select();

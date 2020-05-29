@@ -36,13 +36,9 @@
 	<script type="text/html" id="toolBar">
 		{:widget('func/btnEdit',array('编辑'))}
 		{:widget('func/btnDel',array('删除'))}
-		<if condition="in_array('sys:admin:setRole',$funcList)">
-			<a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="role"><i class="layui-icon">&#xe631;</i>角色设置</a>
-		</if>
-		<if condition="in_array('sys:admin:resetPwd',$funcList)">
-			<a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="reset"><i class="layui-icon">&#xe640;</i>重置密码</a>
-		</if>
-	</script> 
+		{:widget('func/btnFunc',array('setAuth','layui-icon-set','独立权限','layui-bg-cyan',2))}
+		{:widget('func/btnFunc',array('resetPwd','layui-icon-password','重置密码','layui-btn-normal',2))}
+	</script>
 	
 	<!-- 状态 -->
 	<script type="text/html" id="statusTpl">

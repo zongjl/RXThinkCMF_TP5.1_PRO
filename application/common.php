@@ -715,10 +715,10 @@ if (!function_exists('getter')) {
     {
         $result = $default;
         if (isset($data[$field])) {
-            if (is_array($data[$field])) {
-                $result = $data[$field];
-            } else {
+            if (is_string($data[$field])) {
                 $result = trim($data[$field]);
+            } else {
+                $result = $data[$field];
             }
         }
         return $result;

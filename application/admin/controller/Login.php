@@ -58,9 +58,14 @@ class Login extends AdminBase
             $result = $this->service->login();
             return $result;
         }
-        if ($_GET['do'] == 'exit') {
-            session('admin_id', null);
-            $this->redirect('/login/index');
-        }
+    }
+
+    /**
+     * 退出登录
+     */
+    public function logout()
+    {
+        session('admin_id', null);
+        $this->redirect('/login/index');
     }
 }

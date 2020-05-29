@@ -25,7 +25,7 @@
 				<input name="mobile" id="mobile" value="{$info.mobile|default=''}" lay-verify="required|phone" placeholder="请输入手机号码" autocomplete="off" class="layui-input" type="tel">
 			</div>
 		</div>
-		
+
 		<div class="layui-inline">
 			<label class="layui-form-label">电子邮箱：</label>
 			<div class="layui-input-inline">
@@ -68,7 +68,7 @@
 				<input name="username" id="username" value="{$info.username|default=''}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" type="text">
 			</div>
 		</div>
-		
+
 		<div class="layui-inline">
 			<label class="layui-form-label">密码：</label>
 			<div class="layui-input-inline">
@@ -107,6 +107,12 @@
 	<div class="layui-form-item">
 		<label class="layui-form-label">所属城市：</label>
 		{:widget('city/simpleSelect',array(isset($info['district_id']) ? $info['district_id'] : 0,3))}
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">所属角色：</label>
+		<div class="layui-input-block">
+			{:widget('checkbox/simpleSelect',array('roleIds|name|id',$roleList,$checkedList))}
+		</div>
 	</div>
 	<div class="layui-form-item layui-form-text" style="width:665px;">
 		<label class="layui-form-label">备注：</label>

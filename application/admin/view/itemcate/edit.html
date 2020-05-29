@@ -1,6 +1,6 @@
 <form class="layui-form model-form" action="" style="width:80%;">
 	<input name="id" id="id" type="hidden" value="{$info.id|default=0}">
-	<input name="parent_id" id="parent_id" type="hidden" value="{$info.parent_id|default=0}">
+	<input name="pid" id="pid" type="hidden" value="{$info.pid|default=0}">
 	<div class="layui-form-item">
 		<div class="layui-inline">
 			<label class="layui-form-label">栏目名称：</label>
@@ -15,7 +15,6 @@
 			</div>
 		</div>
 	</div>
-	{:widget('common/pinyin',array($info['pinyin'],$info['code']))}
 	<div class="layui-form-item">
 		<div class="layui-inline">
 			<label class="layui-form-label">有无封面：</label>
@@ -23,7 +22,7 @@
 				{:widget('common/switchCheck',array('is_cover','有封面|无封面',isset($info['is_cover']) ? $info['is_cover'] : ''))}
 			</div>
 		</div>
-		{if $info.parent_id gt 0}
+		{if $info.pid gt 0}
 		<div class="layui-inline">
 			<label class="layui-form-label">上级栏目：</label>
 			<div class="layui-input-inline">
@@ -32,14 +31,14 @@
 		</div>
 		{/if}
 	</div>
-	<div class="layui-form-item {if $info.is_cover neq 1}layui-hide{/if} cover">
+	<div class="layui-form-item {if isset($info.is_cover) && $info.is_cover neq 1}layui-hide{/if} cover">
 		<label class="layui-form-label">栏目封面：</label>
 		{:widget('upload/uploadSingleImage',array('cover',isset($info['cover_url']) ? $info['cover_url'] : '','90x90','封面'))}
 	</div>
 	<div class="layui-form-item layui-form-text" style="width:665px;">
 		<label class="layui-form-label">栏目说明：</label>
 		<div class="layui-input-block">
-			<textarea name="note" id="note" placeholder="请输入栏目说明" class="layui-textarea">{$info.note}</textarea>
+			<textarea name="note" id="note" placeholder="请输入栏目说明" class="layui-textarea">{$info["note"]|default=''}</textarea>
 		</div>
 	</div>
 	<div class="layui-form-item">

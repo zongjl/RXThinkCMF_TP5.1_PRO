@@ -134,7 +134,7 @@ class AdminBase extends BaseController
             // 获取操作权限点信息
             $requestUrl = strtolower("/" . $this->request->controller() . "/" . $this->request->action());
             $funcInfo = $menuMod->where([
-                'parent_id' => $info['id'],
+                'pid' => $info['id'],
                 'type' => 4,
                 'url' => $requestUrl,
                 'mark' => 1
@@ -288,6 +288,7 @@ class AdminBase extends BaseController
     public function drop()
     {
         if (IS_POST) {
+            return message("演示版,禁止操作", false);
             $id = input('post.id');
             $info = $this->model->getInfo($id);
             if ($info) {
@@ -379,6 +380,7 @@ class AdminBase extends BaseController
     public function batchDrop()
     {
         if (IS_POST) {
+            return message("演示版,禁止操作", false);
             $ids = explode(',', $_POST['id']);
             //批量删除
             $num = 0;
@@ -419,6 +421,7 @@ class AdminBase extends BaseController
     public function batchStatus()
     {
         if (IS_POST) {
+            return message("演示版,禁止操作", false);
             $ids = explode(',', $_POST['id']);
             $status = (int)$_POST['status'];
             if (!is_array($ids)) {
@@ -447,6 +450,7 @@ class AdminBase extends BaseController
     public function setStatus()
     {
         if (IS_POST) {
+            return message("演示版,禁止操作", false);
             $result = $this->service->setStatus();
             return $result;
         }

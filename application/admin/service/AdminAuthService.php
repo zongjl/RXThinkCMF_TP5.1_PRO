@@ -36,6 +36,7 @@ class AdminAuthService extends BaseService
         $this->model = new MenuModel();
     }
 
+
     /**
      * 获取数据列表
      * @return array 返回结果
@@ -106,6 +107,7 @@ class AdminAuthService extends BaseService
      */
     public function setAuth()
     {
+//        return message("演示版,禁止操作", false);
         $param = request()->param();
         $type = (int)$param['type'];
         $type_id = (int)$param['type_id'];

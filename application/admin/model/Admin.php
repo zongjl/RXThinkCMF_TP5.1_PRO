@@ -73,44 +73,24 @@ class Admin extends BaseModel
                 $info['position_name'] = $position_info['name'];
             }
 
-            // 独立权限
-            $auth_list = [];
-            if ($info['auth']) {
-                $admin_auth = unserialize($info['auth']);
-                if (is_array($admin_auth)) {
-                    foreach ($admin_auth as $key => $val) {
-                        $auth_list[$key][] = $val;
-                    }
-                }
+            // 职级
+            if ($info['level_id']) {
+                $levelMod = new Level();
+                $levelInfo = $levelMod->getInfo($info['level_id']);
+                $info['level_name'] = $levelInfo['name'];
             }
 
-            // 角色权限
-            if ($info['role_ids']) {
-                $role_ids = explode(',', $info['role_ids']);
-                $admin_role_model = new AdminRoleModel();
-                $role_auth = $admin_role_model->getRoleAuth($role_ids);
-                if (is_array($role_auth)) {
-                    foreach ($role_auth as $kt => $vt) {
-                        $auth_list[$kt][] = $vt;
-                    }
-                }
+            // 所属城市
+            if ($info['district_id']) {
+                $cityMod = new City();
+                $cityName = $cityMod->getCityName($info['district_id'], " ");
+                $info['city_name'] = $cityName;
             }
 
-            // 权限重组
-            $auth = [];
-            foreach ($auth_list as $key => $val) {
-                if (!in_array($key, array_keys($auth))) {
-                    $auth[$key] = array();
-                }
-                foreach ($val as $vt) {
-                    foreach ($vt as $v) {
-                        if (!in_array($v, $auth[$key])) {
-                            $auth[$key][] = $v;
-                        }
-                    }
-                }
-            }
-            $info['system_auth'] = $auth;
+            // 获取人员权限
+            $adminRomMod = new AdminRom();
+            $permissionList = $adminRomMod->getPermissionList($id);
+            $info['system_auth'] = $permissionList;
         }
         return $info;
     }
