@@ -10,11 +10,8 @@
 		<div class="layui-inline">
 			<label class="layui-form-label">菜单图标：</label>
 			<div class="layui-input-inline">
-				<input name="icon" id="icon" value="{if isset($info.icon) && $info.icon neq null}{$info.icon|default=''}{else}yun-wangzhan{/if}" lay-verify="required" autocomplete="off" placeholder="请输入菜单图标" class="layui-input" type="text" disabled="">
+				{:widget('iconPicker/iconPicker',array('icon',isset($info['icon']) ? $info['icon'] : 'layui-icon-component'))}
 			</div>
-			<a href="javascript:" class="layui-btn layui-btn-small btnIcon" id="btnIcon">
-				<i class="iconFont larry-icon {if isset($info.icon) && $info.icon neq null}{$info.icon|default=''}{else}yun-wangzhan{/if}"></i> 图标
-			</a>
 		</div>
 	</div>
 	<div class="layui-form-item">

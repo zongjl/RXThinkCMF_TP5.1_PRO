@@ -17,7 +17,6 @@ layui.config({  // common.js是配置layui扩展模块的目录，每个页面�
     croppers: 'croppers/croppers',
     iconPicker: 'iconPicker/iconPicker'
 }).use(['layer', 'admin', 'function'], function () {
-
     var $ = layui.jquery;
     var layer = layui.layer;
     var admin = layui.admin;
