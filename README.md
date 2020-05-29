@@ -1,5 +1,5 @@
 
-<h1 align="center"> RXThinkCMF_TP5.1_PRO权限(RBAC)及内容管理框架</h1>
+<h1 align="center"> 为梦想而创作：RXThinkCMF_TP5.1_PRO权限(RBAC)及内容管理框架</h1>
 
 <p align="center">
 	<a href="http://www.rxthink.cn/">
@@ -17,10 +17,6 @@
 	<a href='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/members'>
 	    <img src='https://gitee.com/ruoxi520_admin/RXThinkCMF_TP5.1_PRO/badge/fork.svg?theme=dark' alt='fork'></img>
 	</a>
-</p>
-
-<p align="center">
-<img src="https://images.gitee.com/uploads/images/2019/0517/232335_2588e5e3_478496.png" />
 </p>
 
 ### 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！
@@ -93,28 +89,28 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 ## 效果图展示
 
 #### 1、系统登录
- ![系统登录](http://images.pro5.1.rxthink.cn/1.png)
+ ![系统登录](http://images.pro5.1.rxthink.cn/demo/1.png)
  
 #### 2、系统主页
- ![系统主页](http://images.pro5.1.rxthink.cn/2.png)
+ ![系统主页](http://images.pro5.1.rxthink.cn/demo/2.png)
  
-#### 3、func.js方法类库
- ![JS核心类库](http://images.pro5.1.rxthink.cn/3.png)
+#### 3、菜单管理页
+ ![菜单管理](http://images.pro5.1.rxthink.cn/demo/3.png)
  
-#### 4、common.js函数类库
- ![JS核心类库](http://images.pro5.1.rxthink.cn/4.png)
+#### 4、图片裁剪
+ ![图片裁剪](http://images.pro5.1.rxthink.cn/demo/4.png)
  
-#### 5、列表JS案例
- ![列表JS案例](http://images.pro5.1.rxthink.cn/5.png)
+#### 5、权限设置
+ ![权限设置](http://images.pro5.1.rxthink.cn/demo/5.png)
  
-#### 6、缓存基类封装
- ![底层缓存基类封装](http://images.pro5.1.rxthink.cn/6.png)
+#### 6、部门管理
+ ![部门管理](http://images.pro5.1.rxthink.cn/demo/6.png)
  
-#### 7、模型基类封装
- ![模型基类封装](http://images.pro5.1.rxthink.cn/7.png)
+#### 7、岗位管理
+ ![岗位管理](http://images.pro5.1.rxthink.cn/demo/7.png)
  
-#### 8、系统公共函数封装
- ![系系统公共函数封装](http://images.pro5.1.rxthink.cn/8.png)
+#### 8、职级管理
+ ![职级管理](http://images.pro5.1.rxthink.cn/demo/8.png)
 
 ## 部署说明
 
@@ -123,12 +119,23 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 ## 更新说明
 
 
+# 2020-05-29更新  
+1、【升级】全新升级v4.0.01
+
+2、【优化】优化权限架构，提高加载性能
+
+3、【升级】升级权限设置的实现逻辑，操作更方便
+
+4、【优化】优化框架UI界面布局划分，抽离公共资源
+
+
 # 2020-02-15更新  
 1、【完成】旗舰版框架v3.0.0全新升级
 
 
 # 2020-01-16更新  
 1、【完成】新增阿里短信发送工具包 ；
+
 2、【完成】新增封装极光推送、友盟推送工具类；
 
 
@@ -138,113 +145,153 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 # 2020-01-02更新  
 1、【完成】新增中间件的功能；
+
 2、【完成】修正系统已收集的BUG；
 
 
 # 2020-01-01更新  
 1、【完成】系统架构进行重新设计，全部采用环境变量的形式进行参数配置，移除config.inc.php配置文件(多数人不理解此文件) ；
+
 2、【完成】动态设置数据表前缀，安装时可以自定义数据表前缀，而不是之前指定的前缀think_；
 
 
 # 2019-12-25更新  
 1、【修复】解决新版权限按钮小组件失效的问题  
+
 2、【修复】修复在使用中已完善的BUG
 
 
 # 2019-05-17更新  
 1、【新增】按钮组件公共JS方法实现btnFunc  
+
 2、【新增】table数据列表新增【一键复制】、【重置缓存】的节点组件
 
 
 # 2019-05-12更新  
 1、【新增】上传图片JS组件UploadFile的实现，switch开关组件formSwitch组件的实现   
+
 2、【新增】数据库管理模块，实现了立即备份、优化表、回复表、数据库还原等  
 
 
 # 2019-05-05更新  
-1、【新增】查询、导出Excel、导入Excel、批量启用、批量禁用等功能按钮组件化   
+1、【新增】查询、导出Excel、导入Excel、批量启用、批量禁用等功能按钮组件化
+   
 2、【完成】附件管理的功能     
+
 3、【完成】系统配置管理   
+
 4、【优化】框架核心JS模块的优化，实现JS、CSS、图片等Webpack一键打包的功能   
 
   
 # 2019-05-02更新  
 1、【新增】增加提交、重置、关闭按钮的组件灵活配置功能（submit|立即提交,reset|重置,close|关闭）  
+
 2、【完成】Checkbox常规选择框、复杂选择框的组件实现  
+
 3、【完成】Radio单选框的组件化实现  
+
 4、【新增】CURD（增删改查）权限验证模块  
+
 5、【新增】Redis缓存优化
 
 
 # 2019-04-20更新  
 1、【新增】字典类型模块   
+
 2、【新增】字典管理模块的实现    
+
 3、【新增】配置分组模块    
+
 4、【新增】配置模块的整理功能优化，系统相关配置的表单式管理  
+
 5、【完成】城市选择组件的常规组件和复杂组件的完善   
 
 
 # 2019-04-05更新
 1、【优化】优化系统底层缓存存储  
-2、【新增】新增BaseModel类的常用CURD（增删改查）常规方法及业务方法    
+
+2、【新增】新增BaseModel类的常用CURD（增删改查）常规方法及业务方法  
+  
 3、【新增】缓存调用方法setCache、getCache、resetCache、deleteCache方法的底层优化  
 
 
 # 2019-03-15更新
 1、【完善】新增图片处理常用函数：save_image（保存图片）、create_image_path（创建系统图片存储路径）、save_remote_image（保存网络图片到本地）  
+
 2、【新增】基类验证类的实现：BaseValidate（验证规则、验证描述、验证场景）    
+
 3、【新增】新增模型常用函数：getCount、getSum、getMax、getMin、getAvg、getValue、getOne、getRow、getColumn、getList等  
   
  
 # 2019-03-05更新
-1、【完成】对底层架构做了调整，实现了模板继承调用及Layout模板布局  
+1、【完成】对底层架构做了调整，实现了模板继承调用及Layout模板布局 
+ 
 2、【新增】模块列表面包屑    
+
 3、【新增】错误提示403、404、500页面  
 
 
 # 2019-02-10更新
 1、【新增】系统应用初始化行为InitApp  
-2、【新增】初始化基础配置行为InitBase    
+
+2、【新增】初始化基础配置行为InitBase  
+  
 3、【新增】注册钩子InitHook  
 
 
 # 2019-01-27更新
 1、【新增】撰写系统常用函数文件common.php  
+
 2、【新增】自定义系统常用函数类function.php文件，备注：function.php文件是系统为了扩展，对开发者自行定义函数的文件，二次开发自定义函数全部写于此，禁止在系统框架common.php文件中进行书写，以免影响系统后续升级优化   
-3、【完善】调整及优化系统控制器基类配置CommonBase.php文件  
+
+3、【完善】调整及优化系统控制器基类配置CommonBase.php文件
+  
 4、【新增】数据库常用操作方法get_tables_list、table_exist、drop_table、get_table_fields、field_exist等底层函数  
+
 5、【新增】CRUD扩展方法doInsert、doUpdate、doDelete、doMark（软删除方法）  
 
 
 # 2018-12-15更新  
 1、为了框架能够更好的发展，年底对框架从底层架构进行重构，新增了扩展及行为钩子、插件、组件，使得系统能更加灵活、更加友好；通过组件化、插件化的目的在于提供系统的可维护性、可操作性及提高研发效率，使得在开发过程中可以简单的通过配置、权限赋予、模块调用等实现模块化的开发  
+
 2、目前系统架构依然采用传统的MVC架构模式，主要是为了广大的用户考虑，目前大部分人对MVC的架构模式比较熟悉和熟练的使用，后期如果有需要，我们会重构系统实现MVP、MVVM或者其他主流架构模式  
+
 3、新重构的系统版本定位：V2.0  
 
 
 # 2018-11-01更新
 1、【新增】岗位模块、职级模块  
+
 2、【新增】友情链接模块、城市模块  
+
 3、【新增】站点模块、栏目模块  
+
 4、【新增】布局描述模块、布局模块  
+
 5、【新增】广告描述模块、广告模块  
 
 
 # 2018-09-18更新
 1、【完善】重点优化系统架构部分，实现CRUD权限管理基础性架构设计及研发，方便权限灵活配置  
+
 2、【新增】新增人员模块功能的实现  
+
 3、【新增】组件底层架构的搭建及一些常用基础组件的研发，如：switch_check（开发组件）、radio_check（单选组件）、single_select（常规选择下拉组件）等  
 
 
 # 2018-07-08更新
 1、【准备】设计系统框架架构，目前框架支持大后台、API接口、前台、WAP站、Script脚本等  
+
 2、【准备】准备框架所需要的第三方组件及文件（支持Composer）  
+
 3、【准备】重点选定系统框架采用传统的MVC架构模式  
+
 4、【准备】研发框架基础RBAC权限管理模块的搭建及基础模块的开发  
 
 
 # 2018-03-08更新
 1、【准备】整体框架结构的规划、设计、排期与实施  
+
 2、【优化】鉴于RXThinkCMF_TP3.2_V2.0框架的设计和实践，对框架整体性做重构与改进  
 
 ## 安全&缺陷
