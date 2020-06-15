@@ -78,7 +78,7 @@ class AdminService extends BaseService
         $username = trim($data['username']);
         $password = trim($data['password']);
         // 角色处理
-        if ($data['roleIds']) {
+        if (isset($data['roleIds']) && $data['roleIds']) {
             $roleIds = array_keys($data['roleIds']);
             if ($roleIds) {
                 $data['role_ids'] = implode(',', $roleIds);

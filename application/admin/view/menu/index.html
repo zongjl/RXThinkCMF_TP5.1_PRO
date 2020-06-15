@@ -11,7 +11,7 @@
 			<div class="layui-inline">
 				<label class="layui-form-label w-auto">菜单名称：</label>
 				<div class="layui-input-inline">
-					<input type="text" name="name" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
+					<input type="text" name="name" id="keywords" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
 				</div>
 			</div>
             <div class="layui-inline">
@@ -19,8 +19,8 @@
 					{:widget('func/btnQuery',array('查询'))}
 					{:widget('func/btnAdd',array('添加菜单'))}
 					{:widget('func/btnDAll',array('批量删除'))}
-					<button class="layui-btn layui-btn-normal" id="expand"><i class="larry-icon">&#xe8c0;</i> 全部展开</button>
-					<button class="layui-btn layui-btn-warm" id="collapse"><i class="larry-icon">&#xe8c1;</i> 全部收起</button>
+					{:widget('func/btnExpand',array('全部展开'))}
+					{:widget('func/btnCollapse',array('全部折叠'))}
                </div>
            </div>
        </div>
