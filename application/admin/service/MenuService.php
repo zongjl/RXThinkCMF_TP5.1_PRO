@@ -169,7 +169,7 @@ class MenuService extends BaseService
                     $info['font'] = "larry-icon";
                     $info['url'] = isset($info['to_url']) ? $info['to_url'] : '';
                     $item[] = $info;
-                    $key = (int)$info['pid'];
+                    $key = isset($info['pid']) ? (int)$info['pid'] : 0;
                 } else {
                     $key = 0;
                 }

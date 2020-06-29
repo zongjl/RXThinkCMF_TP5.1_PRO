@@ -106,7 +106,7 @@ class Index extends AdminBase
         // 设置新密码
         $data = [
             'id' => $this->admin_id,
-            'password' => get_password($newPassword),
+            'password' => get_password($newPassword . $this->admin_info['username']),
         ];
         $adminMod = new \app\admin\model\Admin();
         $result = $adminMod->edit($data);
