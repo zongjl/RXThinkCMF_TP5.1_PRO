@@ -91,7 +91,7 @@ class AdminRom extends BaseModel
             ->where('m.type', '=', 3)
             ->where('m.is_show', '=', 1)
             ->where('m.mark', '=', 1)
-            ->order('m.sort ASC')
+            ->order('m.pid ASC,m.sort ASC')
             ->field('m.id')
             ->select();
         $list = [];

@@ -34,7 +34,7 @@
 	{volist name="img_list" id="row"}
 	<div class="layui-upload-drag">
 		<div class="del_img" onclick="remove_image_{$name}(this);">
-			<img src="__ADMIN__/images/delete.png">
+			<img src="__ADMIN__/assets/images/delete.png">
 		</div>
 		<a href="{$row}" target="_blank">
 			<img name="img_src_{$name}" src="{$row}" alt="{$img_tips}(点击放大预览)" title="{$img_tips}(点击放大预览)" width="{$img_width}" height="{$img_height}">
@@ -43,7 +43,7 @@
 	{/volist}
 {/if}
 <div class="layui-upload-drag img_upload_{$name}">
- 	<img id="btnUploadImg_{$name}" src="__ADMIN__/images/default_upload.png" alt="上传{$img_tips}" title="上传{$img_tips}" width="{$img_width}" height="{$img_height}">
+ 	<img id="btnUploadImg_{$name}" src="__ADMIN__/assets/images/default_upload.png" alt="上传{$img_tips}" title="上传{$img_tips}" width="{$img_width}" height="{$img_height}">
  	<input type="hidden" id="{$name}" name="{$name}" value="">
 </div>
 
@@ -100,7 +100,7 @@ layui.use(['upload'],function(){
 			//渲染界面
 			var attStr = '<div class="layui-upload-drag">'+
 							'<div class="del_img" onclick="remove_image_{$name}(this);">'+
-								'<img src="__ADMIN__/images/delete.png"></img>'+
+								'<img src="__ADMIN__/assets/images/delete.png"></img>'+
 							'</div>'+
 							'<a href="'+res.data+'" target="_blank">'+
 						 		'<img name="img_src_{$name}" src="'+res.data+'" alt="{$img_tips}(点击放大预览)" title="{$img_tips}(点击放大预览)" width="{$img_width}" height="{$img_height}">'+
