@@ -2,67 +2,39 @@
 // +----------------------------------------------------------------------
 // | RXThinkCMF框架 [ RXThinkCMF ]
 // +----------------------------------------------------------------------
-// | 版权所有 2017~2019 南京RXThink工作室
+// | 版权所有 2017~2020 南京RXThinkCMF研发中心
 // +----------------------------------------------------------------------
 // | 官方网站: http://www.rxthink.cn
 // +----------------------------------------------------------------------
-// | Author: 牧羊人 <rxthink.cn@gmail.com>
+// | Author: 牧羊人 <1175401194@qq.com>
 // +----------------------------------------------------------------------
 
 namespace app\admin\model;
 
-use app\admin\model\AdminRole as AdminRoleModel;
+use app\admin\model\Role as AdminRoleModel;
 use app\common\model\BaseModel;
 
 /**
- * (角色、用户)菜单-模型
- * @author zongjl
- * @date 2019/6/10
+ * 权限-模型
+ * @author 牧羊人
+ * @since 2020/7/10
  * Class AdminRom
  * @package app\admin\model
  */
 class AdminRom extends BaseModel
 {
-    // 设置数据表
-    protected $table = DB_PREFIX . 'admin_rom';
-
-    /**
-     * 初始化模型
-     * @author zongjl
-     * @date 2019/6/10
-     */
-    public function initialize()
-    {
-        parent::initialize();
-        // TODO...
-    }
-
-    /**
-     * 获取缓存信息
-     * @param int $id 记录ID
-     * @return mixed 返回结果
-     * @throws \think\db\exception\DataNotFoundException
-     * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
-     * @author zongjl
-     * @date 2019/6/10
-     */
-    public function getInfo($id)
-    {
-        $info = parent::getInfo($id, true);
-        if ($info) {
-            // TODO...
-        }
-        return $info;
-    }
+    // 设置数据表名
+    protected $name = 'admin_rom';
 
     /**
      * 获取权限列表
-     * @param $adminId
+     * @param $adminId 人员ID
      * @return array
      * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\DbException
      * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
+     * @since: 2020/7/10
+     * @author 牧羊人
      */
     public function getPermissionList($adminId)
     {
@@ -83,13 +55,13 @@ class AdminRom extends BaseModel
         $map = [$map1, $map2];
         $menuMod = new Menu();
         $menuList = $menuMod->alias('m')
-            ->join('think_admin_rom r', 'r.menu_id=m.id')
+            ->join(DB_PREFIX . 'admin_rom r', 'r.menu_id=m.id')
             ->distinct(true)
             ->where(function ($query) use ($map) {
                 $query->whereOr($map);
             })
             ->where('m.type', '=', 3)
-            ->where('m.is_show', '=', 1)
+            ->where('m.status', '=', 1)
             ->where('m.mark', '=', 1)
             ->order('m.pid ASC,m.sort ASC')
             ->field('m.id')
@@ -99,14 +71,14 @@ class AdminRom extends BaseModel
             foreach ($menuList as $vm) {
                 // 根据菜单获取节点
                 $funcList = $menuMod->alias('m')
-                    ->join('think_admin_rom r', 'r.menu_id=m.id')
+                    ->join(DB_PREFIX . 'admin_rom r', 'r.menu_id=m.id')
                     ->distinct(true)
                     ->where(function ($query) use ($map) {
                         $query->whereOr($map);
                     })
                     ->where('m.type', '=', 4)
                     ->where('m.pid', '=', intval($vm['id']))
-                    ->where('m.is_show', '=', 1)
+                    ->where('m.status', '=', 1)
                     ->where('m.mark', '=', 1)
                     ->order('m.id ASC')
                     ->field('m.id')
@@ -119,58 +91,5 @@ class AdminRom extends BaseModel
             }
         }
         return $list;
-    }
-
-    /**
-     * 获取人员权限
-     * @param $adminId
-     * @return array
-     * @throws \think\db\exception\DataNotFoundException
-     * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
-     */
-    public function getPermissionList2($adminId)
-    {
-        $adminMod = new Admin();
-        $adminInfo = $adminMod->where("id", $adminId)->find();
-
-        // 用户权限
-        $authList = [];
-
-        // 独立权限
-        $adminAuth = $adminMod->getAdminAuth($adminId);
-        if (is_array($adminAuth)) {
-            foreach ($adminAuth as $key => $val) {
-                $authList[$key][] = $val;
-            }
-        }
-
-        // 角色权限
-        if ($adminInfo['role_ids']) {
-            $admin_role_model = new AdminRoleModel();
-            $roleIds = explode(',', $adminInfo['role_ids']);
-            $roleAuth = $admin_role_model->getRoleAuth($roleIds);
-            if (is_array($roleAuth)) {
-                foreach ($roleAuth as $kt => $vt) {
-                    $authList[$kt][] = $vt;
-                }
-            }
-        }
-
-        // 权限重组
-        $permissionList = [];
-        foreach ($authList as $key => $val) {
-            if (!in_array($key, array_keys($permissionList))) {
-                $permissionList[$key] = array();
-            }
-            foreach ($val as $vt) {
-                foreach ($vt as $v) {
-                    if (!in_array($v, $permissionList[$key])) {
-                        $permissionList[$key][] = $v;
-                    }
-                }
-            }
-        }
-        return $permissionList;
     }
 }

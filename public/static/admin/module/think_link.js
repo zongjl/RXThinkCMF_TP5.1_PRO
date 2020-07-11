@@ -1,7 +1,7 @@
 /**
  * 友链管理
- * @auth 牧羊人
- * @date 2019/4/29
+ * @author 牧羊人
+ * @since 2020/7/10
  */
 layui.use(['form', 'function'], function () {
     var form = layui.form,
@@ -24,15 +24,10 @@ layui.use(['form', 'function'], function () {
             }
             , {field: 'name', width: 150, title: '友链名称', align: 'center', event: 'setSign', style: 'cursor: pointer;'}
             , {field: 'url', width: 250, title: 'URL地址', align: 'center'}
-            , {
-                field: 'type', width: 100, title: '友链类型', align: 'center', templet: function (d) {
-                    return d.type == 1 ? "友情链接" : (d.type == 2 ? "合作伙伴" : "");
-                }
-            }
-            , {field: 'platform_name', width: 150, title: '使用平台', align: 'center'}
+            , {field: 'type_name', width: 100, title: '友链类型', align: 'center'}
+            , {field: 'platform_name', width: 100, title: '使用平台', align: 'center'}
             , {field: 'form_name', width: 100, title: '友链形式', align: 'center'}
-            , {
-                field: 'status', width: 80, title: '状态', align: 'center', templet: function (d) {
+            , {field: 'status', width: 80, title: '状态', align: 'center', templet: function (d) {
                     var str = "";
                     if (d.status == 1) {
                         str = '<span class="layui-btn layui-btn-normal layui-btn-xs">正常</span>';
@@ -42,9 +37,9 @@ layui.use(['form', 'function'], function () {
                     return str;
                 }
             }
-            , {field: 'format_create_user', width: 120, title: '创建人', align: 'center'}
-            , {field: 'format_create_time', width: 200, title: '创建时间', align: 'center', sort: true}
-            , {field: 'sort', width: 120, title: '排序', align: 'center'}
+            , {field: 'sort', width: 100, title: '排序', align: 'center'}
+            , {field: 'create_time', width: 180, title: '创建时间', align: 'center', sort: true}
+            , {field: 'update_time', width: 180, title: '更新时间', align: 'center', sort: true}
             , {fixed: 'right', width: 150, title: '功能操作', align: 'center', toolbar: '#toolBar'}
         ];
 

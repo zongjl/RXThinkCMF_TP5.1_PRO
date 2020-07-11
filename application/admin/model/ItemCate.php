@@ -2,11 +2,11 @@
 // +----------------------------------------------------------------------
 // | RXThinkCMF框架 [ RXThinkCMF ]
 // +----------------------------------------------------------------------
-// | 版权所有 2017~2019 南京RXThink工作室
+// | 版权所有 2017~2020 南京RXThinkCMF研发中心
 // +----------------------------------------------------------------------
 // | 官方网站: http://www.rxthink.cn
 // +----------------------------------------------------------------------
-// | Author: 牧羊人 <rxthink.cn@gmail.com>
+// | Author: 牧羊人 <1175401194@qq.com>
 // +----------------------------------------------------------------------
 
 namespace app\admin\model;
@@ -16,35 +16,24 @@ use app\common\model\BaseModel;
 /**
  * 栏目-模型
  * @author 牧羊人
- * @date 2019/4/30
+ * @since 2020/7/10
  * Class ItemCate
  * @package app\admin\model
  */
 class ItemCate extends BaseModel
 {
-    // 设置数据表
-    protected $table = DB_PREFIX . 'item_cate';
-
-    /**
-     * 初始化模型
-     * @author 牧羊人
-     * @date 2019/4/30
-     */
-    public function initialize()
-    {
-        parent::initialize();
-        // TODO...
-    }
+    // 设置数据表名
+    protected $name = 'item_cate';
 
     /**
      * 获取缓存信息
      * @param int $id 记录ID
-     * @return mixed 返回结果
+     * @return \app\common\model\数据信息|mixed
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
+     * @since 2020/7/10
      * @author 牧羊人
-     * @date 2019/4/30
      */
     public function getInfo($id)
     {
@@ -72,25 +61,25 @@ class ItemCate extends BaseModel
     }
 
     /**
-     * 获取子级栏目
-     * @param int $item_id 站点ID
-     * @param int $pid 上级ID
+     * 根据站点获取栏目列表
+     * @param int $itemId 站点ID
+     * @param int $pid 上级栏目ID
      * @param bool $flag 是否获取子级
-     * @return array 返回结果
+     * @return array
      * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\DbException
      * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
+     * @since 2020/7/2
      * @author 牧羊人
-     * @date 2019/4/30
      */
-    public function getChilds($item_id = 0, $pid = 0, $flag = false)
+    public function getChilds($itemId = 0, $pid = 0, $flag = false)
     {
         $map = [
             'pid' => $pid,
             'mark' => 1,
         ];
-        if ($item_id) {
-            $map['item_id'] = $item_id;
+        if ($itemId) {
+            $map['item_id'] = $itemId;
         }
         $list = [];
         $result = $this->where($map)->order("sort asc")->select();
@@ -101,7 +90,7 @@ class ItemCate extends BaseModel
                     continue;
                 }
                 if ($flag) {
-                    $childList = $this->getChilds($item_id, $val['id'], 0);
+                    $childList = $this->getChilds($itemId, $val['id'], 0);
                     $info['children'] = $childList;
                 }
                 $list[] = $info;
@@ -112,22 +101,21 @@ class ItemCate extends BaseModel
 
     /**
      * 获取栏目名称
-     * @param int $cate_id 栏目ID
-     * @param string $delimiter 分隔符
-     * @return string 返回结果
+     * @param $cateId 栏目ID
+     * @param string $delimiter 拼接字符(如：">>")
+     * @return string
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
+     * @since 2020/7/2
      * @author 牧羊人
-     * @date 2019/4/30
      */
-    public function getCateName($cate_id, $delimiter = "")
+    public function getCateName($cateId, $delimiter = "")
     {
         do {
-            $info = $this->getInfo($cate_id);
+            $info = $this->getInfo($cateId);
             $names[] = $info['name'];
-            $cate_id = $info['pid'];
-        } while ($cate_id > 0);
+            $cateId = $info['pid'];
+        } while ($cateId > 0);
         $names = array_reverse($names);
         if (strpos($names[1], $names[0]) === 0) {
             unset($names[0]);

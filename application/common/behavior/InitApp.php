@@ -2,11 +2,11 @@
 // +----------------------------------------------------------------------
 // | RXThinkCMF框架 [ RXThinkCMF ]
 // +----------------------------------------------------------------------
-// | 版权所有 2017~2019 南京RXThink工作室
+// | 版权所有 2017~2020 南京RXThinkCMF研发中心
 // +----------------------------------------------------------------------
 // | 官方网站: http://www.rxthink.cn
 // +----------------------------------------------------------------------
-// | Author: 牧羊人 <rxthink.cn@gmail.com>
+// | Author: 牧羊人 <1175401194@qq.com>
 // +----------------------------------------------------------------------
 
 namespace app\common\behavior;
@@ -93,9 +93,9 @@ class InitApp
         define('UPLOAD_TEMP_PATH', IMG_PATH . '/temp');
 
         // 系统名称
-        define('SITE_NAME', \Env::get('system.site_name'));
-        define('NICK_NAME', \Env::get('system.nick_name'));
-        define('SYSTEM_VERSION', \Env::get('system.version'));
+        define('SITE_NAME', \Env::get('system.sitename'));
+        define('NICK_NAME', \Env::get('system.nickname'));
+        define('VERSION', \Env::get('system.version'));
     }
 
     /**

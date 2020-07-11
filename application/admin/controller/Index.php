@@ -2,43 +2,45 @@
 // +----------------------------------------------------------------------
 // | RXThinkCMF框架 [ RXThinkCMF ]
 // +----------------------------------------------------------------------
-// | 版权所有 2017~2019 南京RXThink工作室
+// | 版权所有 2017~2020 南京RXThinkCMF研发中心
 // +----------------------------------------------------------------------
 // | 官方网站: http://www.rxthink.cn
 // +----------------------------------------------------------------------
-// | Author: 牧羊人 <rxthink.cn@gmail.com>
+// | Author: 牧羊人 <1175401194@qq.com>
 // +----------------------------------------------------------------------
 
 namespace app\admin\controller;
 
-use app\admin\model\Admin as AdminModel;
 use app\admin\service\MenuService;
+use app\common\controller\Backend;
 
 /**
  * 后台主页-控制器
  * @author 牧羊人
- * @date 2019/4/21
+ * @since 2020/7/10
  * Class Index
  * @package app\admin\controller
  */
-class Index extends AdminBase
+class Index extends Backend
 {
     /**
-     * 初始化方法
+     * 初始化
      * @author 牧羊人
-     * @date 2019/4/21
+     * @since 2020/7/11
      */
     public function initialize()
     {
         parent::initialize();
-        $this->model = new AdminModel();
+        $this->model = new \app\admin\model\Admin();
     }
 
     /**
-     * 主页
+     * 后台主页
      * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @since 2020/7/11
      * @author 牧羊人
-     * @date 2019/4/21
      */
     public function index()
     {
@@ -46,16 +48,16 @@ class Index extends AdminBase
         $this->view->engine->layout(false);
         // 获取菜单
         $menuService = new MenuService();
-        $result = $menuService->getNavbarMenu($this->system_auth);
+        $result = $menuService->getNavbarMenu($this->permission);
         $this->assign('menuList', $result['data']);
         return $this->fetch();
     }
 
     /**
-     * 欢迎页
+     * 系统欢迎页
      * @return mixed
+     * @since 2020/7/11
      * @author 牧羊人
-     * @date 2019/4/21
      */
     public function main()
     {
@@ -66,17 +68,28 @@ class Index extends AdminBase
 
     /**
      * 个人中心
+     * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     * @author 牧羊人
+     * @since 2020/7/11
      */
     public function userInfo()
     {
         $adminMod = new \app\admin\model\Admin();
-        $adminInfo = $adminMod->getInfo($this->admin_id);
+        $adminInfo = $adminMod->getInfo($this->adminId);
         $this->assign("adminInfo", $adminInfo);
         return $this->render();
     }
 
     /**
      * 更新密码
+     * @return array
+     * @throws \think\db\exception\BindParamException
+     * @throws \think\exception\PDOException
+     * @since 2020/7/11
+     * @author 牧羊人
      */
     public function updatePwd()
     {
@@ -100,13 +113,13 @@ class Index extends AdminBase
         if ($newPassword != $rePassword) {
             return message("两次输入的密码不一致", false);
         }
-        if (get_password($oldPassword . $this->admin_info['username']) != $this->admin_info['password']) {
+        if (get_password($oldPassword . $this->adminInfo['username']) != $this->adminInfo['password']) {
             return message("原始密码不正确", false);
         }
         // 设置新密码
         $data = [
-            'id' => $this->admin_id,
-            'password' => get_password($newPassword . $this->admin_info['username']),
+            'id' => $this->adminId,
+            'password' => get_password($newPassword . $this->adminInfo['username']),
         ];
         $adminMod = new \app\admin\model\Admin();
         $result = $adminMod->edit($data);

@@ -1,12 +1,10 @@
 /**
- * 系统人员
- *  @auth 牧羊人
- * @date 2019/5/7
+ * 人员管理
+ * @author 牧羊人
+ * @since 2020/7/11
  */
 layui.use(['function', 'laydate', 'admin', 'zTree'], function () {
-    var laydate = layui.laydate,
-        func = layui.function,
-        form = layui.form,
+    var func = layui.function,
         admin = layui.admin,
         $ = layui.$;
 
@@ -15,8 +13,7 @@ layui.use(['function', 'laydate', 'admin', 'zTree'], function () {
         var cols = [
             {type: 'checkbox', fixed: 'left'}
             , {field: 'id', width: 80, title: 'ID', align: 'center', fixed: 'left', unresize: true, sort: true}
-            , {
-                field: 'avatar_url', width: 60, title: '头像', align: 'center', templet: function (d) {
+            , {field: 'avatar_url', width: 60, title: '头像', align: 'center', templet: function (d) {
                     var avatarStr = "";
                     if (d.avatar_url) {
                         avatarStr = '<a href="' + d.avatar_url + '" target="_blank"><img src="' + d.avatar_url + '" height="26" /></a>';
@@ -24,14 +21,13 @@ layui.use(['function', 'laydate', 'admin', 'zTree'], function () {
                     return avatarStr;
                 }
             }
-            , {field: 'num', width: 100, title: '工号', align: 'center', edit: 'text'}
             , {field: 'realname', width: 100, title: '真实姓名', align: 'center'}
             , {field: 'gender_name', width: 60, title: '性别', align: 'center'}
-            , {field: 'position_name', width: 120, title: '职位', align: 'center'}
+            , {field: 'level_name', width: 120, title: '职级', align: 'center'}
+            , {field: 'position_name', width: 120, title: '岗位', align: 'center'}
             , {field: 'mobile', width: 130, title: '手机号码', align: 'center'}
             , {field: 'email', width: 180, title: '邮箱', align: 'center',}
-            , {
-                field: 'is_admin', width: 80, title: '管理员', align: 'center', templet: function (d) {
+            , {field: 'is_admin', width: 80, title: '管理员', align: 'center', templet: function (d) {
                     var str = "";
                     if (d.is_admin == 1) {
                         str = '<span class="layui-btn layui-btn-normal layui-btn-xs">是</span>';
@@ -48,7 +44,7 @@ layui.use(['function', 'laydate', 'admin', 'zTree'], function () {
 
         //【TABLE渲染】
         func.tableIns(cols, "tableList", function (layEvent, data) {
-            if (layEvent === 'setAuth') {
+            if (layEvent === 'permission') {
 
                 admin.open({
                     title: '角色权限分配',
@@ -103,12 +99,5 @@ layui.use(['function', 'laydate', 'admin', 'zTree'], function () {
         func.formSwitch('status', null, function (data, res) {
             console.log("开关回调成功");
         });
-    } else {
-        //入职日期
-        func.initDate(['entry_date|date'], function (value, date) {
-            console.log("当前选择日期:" + value);
-            console.log("日期详细信息：" + JSON.stringify(date));
-        });
     }
 });
-
