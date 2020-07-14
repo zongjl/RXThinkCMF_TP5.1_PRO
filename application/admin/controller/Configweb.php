@@ -62,8 +62,7 @@ class Configweb extends Backend
                 if ($val['type'] == "select") {
                     // 单选下拉
                     $val['format_name'] = "{$val['name']}|1|{$val['title']}|name|id";
-                }
-                if ($val['type'] == 'checkbox') {
+                } else if ($val['type'] == 'checkbox') {
                     // 复选框
                     $val['format_name'] = "{$val['name']}__checkbox|name|id";
 
@@ -87,8 +86,7 @@ class Configweb extends Backend
                     if ($val['value']) {
                         $val['format_value'] = explode(',', $val['value']);
                     }
-                }
-                if ($val['type'] == 'radio') {
+                } else if ($val['type'] == 'radio') {
                     // 单选
                     $val['format_name'] = "{$val['name']}|name|id";
 
@@ -107,8 +105,7 @@ class Configweb extends Backend
                         }
                     }
                     $val['format_options'] = $options_list;
-                }
-                if ($val['type'] == 'select') {
+                } else if ($val['type'] == 'select') {
                     // 下拉选择
                     $val['format_name'] = "{$val['name']}|1|{$val['title']}|name|id";
 
@@ -127,6 +124,18 @@ class Configweb extends Backend
                         }
                     }
                     $val['format_options'] = $options_list;
+                } else if ($val['type'] == 'image') {
+                    // 单图处理
+                    $val['value'] = get_image_url($val['value']);
+                } else if ($val['type'] == 'images') {
+                    // 图集
+                    $imgsList = $val['value'] ? unserialize($val['value']) : [];
+                    if (!empty($imgsList)) {
+                        foreach ($imgsList as &$vo) {
+                            $vo = get_image_url($vo);
+                        }
+                    }
+                    $val['value'] = $imgsList;
                 }
             }
         }

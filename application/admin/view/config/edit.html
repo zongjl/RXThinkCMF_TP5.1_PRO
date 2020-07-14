@@ -1,4 +1,4 @@
-<form class="layui-form model-form" action="" style="width:80%;">
+<form class="layui-form model-form" action="">
 	<input name="id" id="id" type="hidden" value="{$info.id|default=0}">
 	<div class="layui-form-item">
 		<div class="layui-inline">
@@ -28,34 +28,36 @@
 			</div>
 		</div>
 	</div>
-	<div class="layui-form-item layui-form-text" style="width:665px;">
+	<div class="layui-form-item layui-form-text" style="width:625px;">
 		<label class="layui-form-label">配置值：</label>
 		<div class="layui-input-block">
 			<textarea name="value" placeholder="请输入配置值" class="layui-textarea">{$info.value|default=''}</textarea>
 		</div>
 	</div>
-	<div class="layui-form-item layui-form-text" style="width:665px;">
+	<div class="layui-form-item layui-form-text" style="width:625px;">
 		<label class="layui-form-label">配置项：</label>
 		<div class="layui-input-block">
 			<textarea name="options" placeholder="请输入配置项" class="layui-textarea">{$info.options|default=''}</textarea>
 		</div>
 	</div>
-	<div class="layui-form-item layui-form-text" style="width:665px;">
+	<div class="layui-form-item layui-form-text" style="width:625px;">
 		<label class="layui-form-label">配置说明：</label>
 		<div class="layui-input-block">
 			<textarea name="remark" placeholder="请输入配置说明" class="layui-textarea">{$info.remark|default=''}</textarea>
 		</div>
 	</div>
-	<div class="layui-form-item layui-form-text">
-		<label class="layui-form-label">状态：</label>
-		<div class="layui-input-block">
-			{:widget('common/switchCheck',array('status','是|否',isset($info['status']) ? $info['status'] : 1))}
-		</div>
-	</div>
 	<div class="layui-form-item">
-		<label class="layui-form-label">排序：</label>
-		<div class="layui-input-inline">
-			<input name="sort" value="{$info.sort|default=125}" lay-verify="required|number" autocomplete="off" placeholder="请输入排序" class="layui-input" type="text">
+		<div class="layui-inline">
+			<label class="layui-form-label">状态：</label>
+			<div class="layui-input-inline">
+				{:widget('common/switchCheck',array('status','是|否',isset($info['status']) ? $info['status'] : 1))}
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label">排序：</label>
+			<div class="layui-input-inline">
+				<input name="sort" value="{$info.sort|default=125}" lay-verify="required|number" autocomplete="off" placeholder="请输入排序" class="layui-input" type="text">
+			</div>
 		</div>
 	</div>
 	{:widget('common/submit',array('submit|立即保存,close|关闭'))}

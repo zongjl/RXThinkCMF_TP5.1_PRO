@@ -90,11 +90,11 @@
 						</div>
 						{elseif $vo.type eq 'image'}
 						<!-- 单图 -->
-						{:widget('upload/image',array($vo['name'].'__upimage|图片|90x90',isset($info['image_url']) ? $info['image_url'] : ''))}
+							{:widget('upload/image',array($vo['name'].'__upimage|图片|90x90',isset($vo['value']) ? $vo['value'] : ''))}
 						{elseif $vo.type eq 'images'}
 						<!-- 多图 -->
 						<div class="layui-input-block">
-							{:widget('upload/uploadMultipleImage',array($vo['name'] . '__upimgs',isset($vo['imgsList']) ? $vo['imgsList'] : [],'图集','100x100',20))}
+							{:widget('upload/album',array($vo['name'] . '__upimgs|图集|90x90|5|建议上传尺寸450x450|450x450',isset($vo['value']) ? $vo['value'] : []))}
 						</div>
 						{elseif $vo.type eq 'file'}
 						<!-- 单文件上传 -->

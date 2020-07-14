@@ -77,6 +77,33 @@ class Index extends Backend
      */
     public function userInfo()
     {
+        if (IS_POST) {
+            // 参数
+            $param = request()->param();
+            // 真实姓名
+            $realname = trim($param['realname']);
+            // 邮箱
+            $email = trim($param['email']);
+            // 个人简介
+            $intro = trim($param['intro']);
+            // 街道地址
+            $address = trim($param['address']);
+            // 联系电话
+            $mobile = trim($param['mobile']);
+            $data = [
+                'id' => $this->adminId,
+                'realname' => $realname,
+                'email' => $email,
+                'intro' => $intro,
+                'address' => $address,
+                'mobile' => $mobile,
+            ];
+            $result = $this->model->edit($data);
+            if (!$result) {
+                return message("信息保存失败", false);
+            }
+            return message();
+        }
         $adminMod = new \app\admin\model\Admin();
         $adminInfo = $adminMod->getInfo($this->adminId);
         $this->assign("adminInfo", $adminInfo);
