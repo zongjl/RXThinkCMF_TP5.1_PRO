@@ -89,58 +89,58 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 ## 效果图展示
 
 #### 1、系统登录
- ![系统登录](http://images.pro5.1.rxthink.cn/demo2/1.png)
+ ![系统登录](http://images.pro5.1.rxthink.cn/demo/1.png)
  
 #### 2、系统主页
- ![系统主页](http://images.pro5.1.rxthink.cn/demo2/2.png)
+ ![系统主页](http://images.pro5.1.rxthink.cn/demo/2.png)
  
 #### 3、人员管理
- ![人员管理](http://images.pro5.1.rxthink.cn/demo2/3.png)
+ ![人员管理](http://images.pro5.1.rxthink.cn/demo/3.png)
  
 #### 4、人员编辑
- ![人员编辑](http://images.pro5.1.rxthink.cn/demo2/4.png)
+ ![人员编辑](http://images.pro5.1.rxthink.cn/demo/4.png)
  
 #### 5、头像裁剪
- ![头像裁剪](http://images.pro5.1.rxthink.cn/demo2/5.png)
+ ![头像裁剪](http://images.pro5.1.rxthink.cn/demo/5.png)
  
 #### 6、角色权限
- ![角色权限](http://images.pro5.1.rxthink.cn/demo2/6.png)
+ ![角色权限](http://images.pro5.1.rxthink.cn/demo/6.png)
  
 #### 7、职级管理
- ![职级管理](http://images.pro5.1.rxthink.cn/demo2/7.png)
+ ![职级管理](http://images.pro5.1.rxthink.cn/demo/7.png)
  
 #### 8、岗位管理
- ![岗位管理](http://images.pro5.1.rxthink.cn/demo2/8.png)
+ ![岗位管理](http://images.pro5.1.rxthink.cn/demo/8.png)
  
 #### 9、部门管理
-![职级管理](http://images.pro5.1.rxthink.cn/demo2/9.png)
+![职级管理](http://images.pro5.1.rxthink.cn/demo/9.png)
 
 #### 10、菜单管理
-![菜单管理](http://images.pro5.1.rxthink.cn/demo2/10.png)
+![菜单管理](http://images.pro5.1.rxthink.cn/demo/10.png)
 
 #### 11、菜单编辑
-![菜单编辑](http://images.pro5.1.rxthink.cn/demo2/11.png)
+![菜单编辑](http://images.pro5.1.rxthink.cn/demo/11.png)
 
 #### 12、行为日志
-![职级管理](http://images.pro5.1.rxthink.cn/demo2/12.png)
+![职级管理](http://images.pro5.1.rxthink.cn/demo/12.png)
 
 #### 13、字典管理
-![字典管理](http://images.pro5.1.rxthink.cn/demo2/13.png)
+![字典管理](http://images.pro5.1.rxthink.cn/demo/13.png)
 
 #### 14、行政区域
-![行政区域](http://images.pro5.1.rxthink.cn/demo2/14.png)
+![行政区域](http://images.pro5.1.rxthink.cn/demo/14.png)
 
 #### 15、通知公告
-![通知公告](http://images.pro5.1.rxthink.cn/demo2/15.png)
+![通知公告](http://images.pro5.1.rxthink.cn/demo/15.png)
 
 #### 16、数据库管理
-![数据库管理](http://images.pro5.1.rxthink.cn/demo2/16.png)
+![数据库管理](http://images.pro5.1.rxthink.cn/demo/16.png)
 
 #### 17、一键生成模块
-![一键生成模块](http://images.pro5.1.rxthink.cn/demo2/18.png)
+![一键生成模块](http://images.pro5.1.rxthink.cn/demo/18.png)
 
 #### 18、框架结构
-![框架结构](http://images.pro5.1.rxthink.cn/demo2/17.png)
+![框架结构](http://images.pro5.1.rxthink.cn/demo/17.png)
 
 ## 部署说明
 
