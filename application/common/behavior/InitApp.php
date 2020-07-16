@@ -85,7 +85,7 @@ class InitApp
         define('EXTEND_PATH', \Env::get('extend_path'));
         define('VENDOR_PATH', \Env::get('vendor_path'));
         define('PLUGIN_PATH', ROOT_PATH . 'plugins');
-        define('PUBLIC', ROOT_PATH . 'public');
+        define('PUBLIC_PATH', ROOT_PATH . 'public');
 
         // 附件常量
         define('ATTACHMENT_PATH', \Env::get('system.attach_path'));

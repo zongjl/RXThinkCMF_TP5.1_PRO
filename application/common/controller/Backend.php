@@ -248,7 +248,6 @@ class Backend extends BaseController
     public function drop()
     {
         if (IS_POST) {
-            return message("演示版,禁止操作", false);
             $id = input('post.id');
             $info = $this->model->getInfo($id);
             if ($info) {

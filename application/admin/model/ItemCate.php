@@ -111,16 +111,19 @@ class ItemCate extends BaseModel
      */
     public function getCateName($cateId, $delimiter = "")
     {
+        $names = [];
         do {
             $info = $this->getInfo($cateId);
-            $names[] = $info['name'];
-            $cateId = $info['pid'];
+            $names[] = isset($info['name']) ? $info['name'] : '';
+            $cateId = isset($info['pid']) ? $info['pid'] : 0;
         } while ($cateId > 0);
-        $names = array_reverse($names);
-        if (strpos($names[1], $names[0]) === 0) {
-            unset($names[0]);
+        if (!empty($names)) {
+            $names = array_reverse($names);
+            if (strpos($names[1], $names[0]) === 0) {
+                unset($names[0]);
+            }
+            return implode($delimiter, $names);
         }
-        $nameStr = implode($delimiter, $names);
-        return $nameStr;
+        return null;
     }
 }
