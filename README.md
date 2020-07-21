@@ -85,6 +85,22 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 [技术支持QQ：1175401194](http://wpa.qq.com/msgrd?v=3&amp;uin=1175401194&amp;site=qq&amp;menu=yes)
 
+## 一键安装
+
+#### 1、软件许可协议
+ ![系统登录](http://images.pro5.1.rxthink.cn/install/1.png)
+ 
+#### 2、检测环境
+ ![检测环境](http://images.pro5.1.rxthink.cn/install/2.png)
+ 
+#### 3、创建数据库
+ ![创建数据库](http://images.pro5.1.rxthink.cn/install/3.png)
+ 
+#### 4、程序安装
+ ![程序安装](http://images.pro5.1.rxthink.cn/install/4.png)
+ 
+#### 5、安装完成
+ ![安装完成](http://images.pro5.1.rxthink.cn/install/5.png)
 
 ## 效果图展示
 
@@ -147,6 +163,13 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 [点击查看技术文档](http://docs.v5.1.rxthink.cn/)
 
 ## 更新说明
+
+# 2020.07.20
+1、【新增】新增一键安装程序；
+
+2、【新增】设计一键安装程序界面，编写程序以及调优；
+
+3、【测试】测试和优化系统安装程序，保证高效、完美的实现安装及系统正常运行；
 
 # 2020.07.16
 1、【新增】新增一键生成模块的功能；
