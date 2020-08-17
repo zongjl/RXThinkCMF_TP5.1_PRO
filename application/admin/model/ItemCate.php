@@ -119,8 +119,10 @@ class ItemCate extends BaseModel
         } while ($cateId > 0);
         if (!empty($names)) {
             $names = array_reverse($names);
-            if (strpos($names[1], $names[0]) === 0) {
-                unset($names[0]);
+            if (count($names) >= 2) {
+                if (strpos($names[1], $names[0]) === 0) {
+                    unset($names[0]);
+                }
             }
             return implode($delimiter, $names);
         }
